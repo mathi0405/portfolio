@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Autonomous driving via deep reinforcement learning — PPO and SAC benchmarked against PID and Stanley controllers in CARLA.">
+<title>Autonomous Driving via Deep RL — Mani Chandan Mathi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#101210;color:#E8E6DE;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;--accent:#A9BCA4;--ink:#E8E6DE;--muted:rgba(232,230,222,0.6);--faint:rgba(232,230,222,0.42);--line:rgba(232,230,222,0.1);--card:#161815}
+::selection{background:var(--accent);color:#101210}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+::-webkit-scrollbar{width:10px;background:#101210}
+::-webkit-scrollbar-thumb{background:#262924;border-radius:5px}
+</style>
+</helmet>
+
+<nav aria-label="Primary" style="position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px clamp(20px,4vw,48px)">
+  <a href="index.html" style="font-family:'Instrument Serif',serif;font-style:italic;font-size:24px;color:var(--ink);text-decoration:none;text-shadow:0 1px 12px rgba(0,0,0,0.5)">mathi</a>
+  <span style="font-size:12px;letter-spacing:0.18em;color:rgba(232,230,222,0.66);background:rgba(16,18,16,0.45);border:1px solid rgba(232,230,222,0.12);border-radius:999px;padding:10px 22px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)">CASE STUDY 02 / 03</span>
+  <a href="index.html" style="background:rgba(232,230,222,0.1);border:1px solid rgba(232,230,222,0.16);color:var(--ink);font-size:14px;font-weight:500;text-decoration:none;border-radius:999px;padding:12px 24px;backdrop-filter:blur(10px);transition:background .3s" style-hover="background:rgba(232,230,222,0.18)">← Index</a>
+</nav>
+
+<header data-screen-label="Autonomous Driving Hero" style="position:relative;min-height:78vh;display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid var(--line)">
+  <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&amp;fit=crop&amp;w=2000&amp;q=80" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(0.6) brightness(0.55)">
+  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(16,18,16,0.6) 0%, rgba(16,18,16,0.3) 40%, rgba(16,18,16,0.92) 100%)"></div>
+  <div style="position:relative;z-index:2;max-width:1140px;margin:0 auto;width:100%;padding:160px clamp(20px,5vw,48px) clamp(48px,6vw,72px)">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:26px">
+      <span style="font-size:11.5px;letter-spacing:0.18em;color:var(--ink);background:rgba(232,230,222,0.12);border:1px solid rgba(232,230,222,0.2);padding:6px 14px;border-radius:999px;backdrop-filter:blur(8px);white-space:nowrap">OPEN SOURCE · 2025</span>
+      <a href="https://github.com/mathi0405/Autonomous-driving" target="_blank" rel="noopener" style="font-size:11.5px;letter-spacing:0.14em;color:rgba(232,230,222,0.75);text-decoration:none" style-hover="color:var(--ink)">github.com/mathi0405/Autonomous-driving ↗</a>
+    </div>
+    <h1 style="font-size:clamp(40px,6vw,80px);font-weight:500;letter-spacing:-0.035em;line-height:1.04;margin:0 0 22px;max-width:18ch;text-wrap:balance;text-shadow:0 2px 36px rgba(0,0,0,0.4)">Driving from <em style="font-family:'Instrument Serif',serif;font-weight:400">pixels</em> alone</h1>
+    <p style="font-size:clamp(17px,2vw,22px);color:rgba(232,230,222,0.82);line-height:1.55;margin:0;max-width:48ch;text-wrap:pretty">Can an agent trained entirely in simulation, seeing only camera pixels, match hand-engineered controllers? A rigorous head-to-head in CARLA.</p>
+  </div>
+</header>
+
+<div style="max-width:1140px;margin:0 auto;padding:clamp(28px,4vw,44px) clamp(20px,5vw,48px) 0">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden">
+    <div style="background:var(--card);padding:20px 24px"><p style="font-size:10.5px;letter-spacing:0.18em;color:var(--faint);margin:0 0 8px">ROLE</p><p style="font-size:15px;margin:0">Solo researcher &amp; engineer</p></div>
+    <div style="background:var(--card);padding:20px 24px"><p style="font-size:10.5px;letter-spacing:0.18em;color:var(--faint);margin:0 0 8px">AGENTS</p><p style="font-size:15px;margin:0">PPO · SAC vs. PID · Stanley</p></div>
+    <div style="background:var(--card);padding:20px 24px"><p style="font-size:10.5px;letter-spacing:0.18em;color:var(--faint);margin:0 0 8px">ENVIRONMENT</p><p style="font-size:15px;margin:0">CARLA ≥ 0.9.14 + CPU fallback</p></div>
+    <div style="background:var(--card);padding:20px 24px"><p style="font-size:10.5px;letter-spacing:0.18em;color:var(--faint);margin:0 0 8px">OBSERVATIONS</p><p style="font-size:15px;margin:0">Raw camera pixels via CNN</p></div>
+  </div>
+</div>
+
+<main style="max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+
+  <section data-screen-label="Research Question" style="padding:clamp(64px,8vw,110px) 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(28px,4vw,64px)">
+    <div data-reveal="true">
+      <p style="font-size:12px;letter-spacing:0.24em;color:var(--accent);margin:0 0 18px">01 · RESEARCH QUESTION</p>
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.12;text-wrap:balance">A learned policy vs. forty years of <em style="font-family:'Instrument Serif',serif;font-weight:400">control theory</em>.</h2>
+    </div>
+    <div data-reveal="true" style="font-size:16.5px;line-height:1.75;color:var(--muted)">
+      <p style="margin:0 0 18px;border-left:2px solid var(--accent);padding-left:18px;font-size:18px;color:var(--ink);font-weight:500">Can a deep RL agent, trained entirely from simulation, match or surpass hand-engineered classical controllers on structured driving tasks?</p>
+      <p style="margin:0">The agent must hold its lane, take curves at varying curvature, regulate speed to a target, and avoid obstacles — with no rules encoded, operating from camera pixels alone while the classical baselines enjoy privileged state.</p>
+    </div>
+  </section>
+
+  <section data-screen-label="Pipeline" style="padding:clamp(64px,8vw,110px) 0;border-bottom:1px solid var(--line)">
+    <div data-reveal="true" style="margin-bottom:clamp(36px,5vw,56px)">
+      <p style="font-size:12px;letter-spacing:0.24em;color:var(--accent);margin:0 0 18px">02 · SYSTEM</p>
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.1">One interface, <em style="font-family:'Instrument Serif',serif;font-weight:400">two</em> worlds.</h2>
+    </div>
+    <div data-reveal="true" style="border:1px solid var(--line);border-radius:20px;background:#131512;padding:clamp(24px,4vw,48px);overflow-x:auto;margin-bottom:20px">
+      <div style="display:flex;align-items:stretch;gap:14px;min-width:860px">
+        <div style="flex:1;border:1px solid rgba(232,230,222,0.14);border-radius:14px;padding:18px;background:#181b17"><p style="font-size:10px;letter-spacing:0.18em;color:var(--faint);margin:0 0 8px">SIMULATION</p><p style="font-size:14px;font-weight:600;margin:0 0 8px">CARLA / fallback env</p><p style="font-size:12px;color:var(--faint);margin:0;line-height:1.7">identical Gymnasium<br>interface on both</p></div>
+        <div aria-hidden="true" style="align-self:center;color:var(--accent);font-size:20px">→</div>
+        <div style="flex:1;border:1px solid rgba(169,188,164,0.4);border-radius:14px;padding:18px;background:rgba(169,188,164,0.07)"><p style="font-size:10px;letter-spacing:0.18em;color:var(--accent);margin:0 0 8px">PERCEPTION</p><p style="font-size:14px;font-weight:600;margin:0 0 8px">CNN encoder</p><p style="font-size:12px;color:var(--faint);margin:0;line-height:1.7">raw RGB → compact<br>latent representation</p></div>
+        <div aria-hidden="true" style="align-self:center;color:var(--accent);font-size:20px">→</div>
+        <div style="flex:1;border:1px solid rgba(169,188,164,0.4);border-radius:14px;padding:18px;background:rgba(169,188,164,0.07)"><p style="font-size:10px;letter-spacing:0.18em;color:var(--accent);margin:0 0 8px">POLICY</p><p style="font-size:14px;font-weight:600;margin:0 0 8px">PPO / SAC — or PID / Stanley</p><p style="font-size:12px;color:var(--faint);margin:0;line-height:1.7">learned agents and classical<br>baselines, same conditions</p></div>
+        <div aria-hidden="true" style="align-self:center;color:var(--accent);font-size:20px">→</div>
+        <div style="flex:1;border:1px solid rgba(232,230,222,0.14);border-radius:14px;padding:18px;background:#181b17"><p style="font-size:10px;letter-spacing:0.18em;color:var(--faint);margin:0 0 8px">PIPELINE</p><p style="font-size:14px;font-weight:600;margin:0 0 8px">Train → checkpoint → eval</p><p style="font-size:12px;color:var(--faint);margin:0;line-height:1.7">automated evaluation<br>+ HTML dashboard</p></div>
+      </div>
+    </div>
+    <p data-reveal="true" style="font-size:15px;color:var(--muted);line-height:1.7;margin:0;max-width:72ch">A lightweight CPU-only kinematic simulator mirrors CARLA's observation space, action space, and reward function exactly — so unit tests and CI smoke runs execute in seconds, and policies transfer between backends without modification.</p>
+  </section>
+
+  <section data-screen-label="Reward Design" style="padding:clamp(64px,8vw,110px) 0;border-bottom:1px solid var(--line)">
+    <div data-reveal="true" style="margin-bottom:clamp(36px,5vw,56px)">
+      <p style="font-size:12px;letter-spacing:0.24em;color:var(--accent);margin:0 0 18px">03 · REWARD DESIGN</p>
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.1">Behavior, <em style="font-family:'Instrument Serif',serif;font-weight:400">decomposed</em>.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(28px,4vw,56px);align-items:start">
+      <div data-reveal="true" style="border:1px solid var(--line);border-radius:16px;overflow:hidden;font-family:'JetBrains Mono',monospace">
+        <div style="background:rgba(232,230,222,0.05);padding:14px 20px;font-size:12px;color:var(--muted);letter-spacing:0.04em">r<sub>t</sub> = w<sub>v</sub>·speed + w<sub>p</sub>·progress − w<sub>l</sub>·lane − w<sub>h</sub>·heading − w<sub>s</sub>·steer − w<sub>j</sub>·jerk + terminal</div>
+        <div style="display:grid;grid-template-columns:auto 1fr;gap:0 20px;padding:8px 20px 16px;font-size:12px">
+          <span style="color:var(--accent);padding:8px 0">+ speed</span><span style="color:var(--muted);padding:8px 0">track the target velocity</span>
+          <span style="color:var(--accent);padding:8px 0;border-top:1px solid rgba(232,230,222,0.06)">+ progress</span><span style="color:var(--muted);padding:8px 0;border-top:1px solid rgba(232,230,222,0.06)">arc-length advancement along route</span>
+          <span style="color:rgba(232,230,222,0.72);padding:8px 0;border-top:1px solid rgba(232,230,222,0.06)">− lane error</span><span style="color:var(--muted);padding:8px 0;border-top:1px solid rgba(232,230,222,0.06)">lateral deviation from centerline</span>
+          <span style="color:rgba(232,230,222,0.72);padding:8px 0;border-top:1px solid rgba(232,230,222,0.06)">− heading error</span><span style="color:var(--muted);padding:8px 0;border-top:1px solid rgba(232,230,222,0.06)">misalignment with road tangent</span>
+          <span style="color:rgba(232,230,222,0.72);padding:8px 0;border-top:1px solid rgba(232,230,222,0.06)">− steer effort / jerk</span><span style="color:var(--muted);padding:8px 0;border-top:1px solid rgba(232,230,222,0.06)">smoothness, no twitchy control</span>
+          <span style="color:rgba(232,230,222,0.72);padding:8px 0;border-top:1px solid rgba(232,230,222,0.06)">terminal</span><span style="color:var(--muted);padding:8px 0;border-top:1px solid rgba(232,230,222,0.06)">large penalty on collision / off-road</span>
+        </div>
+      </div>
+      <div data-reveal="true" style="font-size:16.5px;line-height:1.75;color:var(--muted)">
+        <p style="margin:0 0 18px">Every sub-reward is logged independently in training telemetry — when the agent misbehaves, the responsible term is visible immediately instead of buried in a scalar.</p>
+        <p style="margin:0">PPO's clipped surrogate objective made it the primary algorithm for its stability on continuous control; SAC's maximum-entropy formulation serves as the off-policy comparison point.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Results" style="padding:clamp(64px,8vw,110px) 0;border-bottom:1px solid var(--line)">
+    <div data-reveal="true" style="margin-bottom:clamp(36px,5vw,56px)">
+      <p style="font-size:12px;letter-spacing:0.24em;color:var(--accent);margin:0 0 18px">04 · RESULTS</p>
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.12;max-width:28ch;text-wrap:balance">95% success — from pixels, <em style="font-family:'Instrument Serif',serif;font-weight:400">without privilege</em>.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(28px,4vw,56px);align-items:start">
+      <div data-reveal="true" style="border:1px solid var(--line);border-radius:16px;overflow:hidden;font-family:'JetBrains Mono',monospace;font-size:13px">
+        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;background:rgba(232,230,222,0.05);padding:12px 20px;color:var(--faint);letter-spacing:0.08em;font-size:10.5px;gap:8px"><span>AGENT · 20 EPISODES</span><span>SUCCESS</span><span>ROUTE</span><span>COLLISION</span></div>
+        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;padding:13px 20px;border-top:1px solid var(--line);gap:8px;background:rgba(169,188,164,0.09)"><span style="color:var(--accent);font-weight:500">PPO (pixels)</span><span>95%</span><span>98%</span><span>0.05</span></div>
+        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;padding:13px 20px;border-top:1px solid var(--line);gap:8px;color:var(--muted)"><span>SAC (pixels)</span><span>85%</span><span>89%</span><span>0.15</span></div>
+        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;padding:13px 20px;border-top:1px solid var(--line);gap:8px;color:var(--faint)"><span>PID (privileged)</span><span>100%</span><span>99%</span><span>0.00</span></div>
+        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;padding:13px 20px;border-top:1px solid var(--line);gap:8px;color:var(--faint)"><span>Stanley (privileged)</span><span>100%</span><span>99%</span><span>0.00</span></div>
+      </div>
+      <div data-reveal="true" style="font-size:16.5px;line-height:1.75;color:var(--muted)">
+        <p style="margin:0 0 18px">PPO approaches classical-controller success rates <strong style="color:var(--ink);font-weight:600">while operating exclusively from image observations</strong> — no map, no privileged state. SAC converges but with higher variance, consistent with off-policy distribution shift in a partially observable setting.</p>
+        <p style="margin:0">The classical controllers' edge on structured tracks is expected — and expected to invert in unstructured or sensor-degraded scenarios, where learned generalization becomes the differentiator.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Engineering" style="padding:clamp(64px,8vw,110px) 0;border-bottom:1px solid var(--line)">
+    <div data-reveal="true" style="margin-bottom:clamp(36px,5vw,56px)">
+      <p style="font-size:12px;letter-spacing:0.24em;color:var(--accent);margin:0 0 18px">05 · ENGINEERING</p>
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.1">CI gates <em style="font-family:'Instrument Serif',serif;font-weight:400">every</em> commit.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(28px,4vw,56px);align-items:start">
+      <div data-reveal="true" style="border:1px solid var(--line);border-radius:16px;background:#131512;padding:26px 28px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:2.1">
+        <p style="margin:0;color:var(--faint)">$ <span style="color:var(--ink)">git push origin main</span></p>
+        <p style="margin:0;color:var(--muted)"><span style="color:var(--accent)">✓</span> ruff — lint &amp; imports</p>
+        <p style="margin:0;color:var(--muted)"><span style="color:var(--accent)">✓</span> mypy — static type checking</p>
+        <p style="margin:0;color:var(--muted)"><span style="color:var(--accent)">✓</span> pytest — unit + integration</p>
+        <p style="margin:0;color:var(--muted)"><span style="color:var(--accent)">✓</span> smoke PPO training episode</p>
+        <p style="margin:0;color:var(--muted)"><span style="color:var(--accent)">✓</span> evaluation pipeline</p>
+        <p style="margin:0;color:var(--muted)"><span style="color:var(--accent)">✓</span> dashboard generation</p>
+        <p style="margin:0;color:var(--accent)">all checks passed — merge allowed</p>
+      </div>
+      <div data-reveal="true">
+        <p style="font-size:16.5px;line-height:1.75;color:var(--muted);margin:0 0 24px">Modular <span style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--ink)">ad_rl</span> package — envs, perception, agents, rewards, control, training, evaluation — with Dockerized environments and YAML-configured experiments for full reproducibility.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">
+          <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">Python 3.10+</span>
+          <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">Stable-Baselines3</span>
+          <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">PyTorch</span>
+          <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">Gymnasium</span>
+          <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">CARLA</span>
+          <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">OpenCV</span>
+          <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">Docker</span>
+          <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">GitHub Actions</span>
+        </div>
+        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Car on an open road" style="width:100%;height:200px;object-fit:cover;border-radius:16px;display:block;filter:saturate(0.7) brightness(0.85)">
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Future Work" style="padding:clamp(64px,8vw,110px) 0">
+    <div data-reveal="true" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(28px,4vw,64px)">
+      <div>
+        <p style="font-size:12px;letter-spacing:0.24em;color:var(--accent);margin:0 0 20px">06 · FUTURE DIRECTIONS</p>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:16px">
+          <li style="font-size:15.5px;color:var(--muted);line-height:1.65;display:flex;gap:14px;align-items:baseline"><span aria-hidden="true" style="color:var(--accent);flex:none">✓</span><span>Reactive traffic participants for social navigation under interactive uncertainty</span></li>
+          <li style="font-size:15.5px;color:var(--muted);line-height:1.65;display:flex;gap:14px;align-items:baseline"><span aria-hidden="true" style="color:var(--accent);flex:none">✓</span><span>Unsignalized intersections, roundabouts, and parking scenarios</span></li>
+          <li style="font-size:15.5px;color:var(--muted);line-height:1.65;display:flex;gap:14px;align-items:baseline"><span aria-hidden="true" style="color:var(--accent);flex:none">✓</span><span>World-model pretraining (DreamerV3, TD-MPC2) for sample efficiency</span></li>
+          <li style="font-size:15.5px;color:var(--muted);line-height:1.65;display:flex;gap:14px;align-items:baseline"><span aria-hidden="true" style="color:var(--accent);flex:none">✓</span><span>CARLA Leaderboard 2.0 evaluation against published state of the art</span></li>
+        </ul>
+      </div>
+      <a href="sign-language.html" style="text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:34px;background:var(--card);display:flex;flex-direction:column;justify-content:space-between;gap:24px;transition:border-color .3s" style-hover="border-color:rgba(232,230,222,0.28)">
+        <p style="font-size:11px;letter-spacing:0.2em;color:var(--faint);margin:0">NEXT CASE STUDY</p>
+        <div>
+          <p style="font-size:24px;font-weight:500;color:var(--ink);margin:0 0 8px;letter-spacing:-0.02em">Sign language, <em style="font-family:'Instrument Serif',serif;font-weight:400">understood</em></p>
+          <p style="font-size:14px;color:var(--muted);margin:0">Deep learning for accessibility — published in IEEE, 2023 <span style="color:var(--accent)">→</span></p>
+        </div>
+      </a>
+    </div>
+    <footer style="margin-top:clamp(64px,8vw,100px);padding-top:28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <p style="font-size:12px;color:rgba(232,230,222,0.32);margin:0">© 2026 Mani Chandan Mathi</p>
+      <a href="index.html" style="font-size:12px;color:var(--muted);text-decoration:none" style-hover="color:var(--ink)">← Back to index</a>
+    </footer>
+  </section>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    this.cleanups = [];
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    const vh = window.innerHeight;
+    const io = new IntersectionObserver((entries) => {
+      for (const en of entries) {
+        if (en.isIntersecting) {
+          en.target.style.opacity = '1';
+          en.target.style.transform = 'translateY(0)';
+          io.unobserve(en.target);
+        }
+      }
+    }, { threshold: 0.12 });
+    els.forEach(el => {
+      if (el.getBoundingClientRect().top > vh * 0.85) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(28px)';
+        el.style.transition = 'opacity .85s cubic-bezier(.16,1,.3,1), transform .85s cubic-bezier(.16,1,.3,1)';
+      }
+      io.observe(el);
+    });
+    this.cleanups.push(() => io.disconnect());
+  }
+  componentWillUnmount() { (this.cleanups || []).forEach(fn => { try { fn(); } catch (e) {} }); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

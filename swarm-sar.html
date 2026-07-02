@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Swarm-SAR — decentralized multi-agent reinforcement learning for cooperative search and rescue under realistic constraints.">
+<title>Swarm-SAR — Mani Chandan Mathi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#101210;color:#E8E6DE;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;--accent:#A9BCA4;--ink:#E8E6DE;--muted:rgba(232,230,222,0.6);--faint:rgba(232,230,222,0.42);--line:rgba(232,230,222,0.1);--card:#161815}
+::selection{background:var(--accent);color:#101210}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+::-webkit-scrollbar{width:10px;background:#101210}
+::-webkit-scrollbar-thumb{background:#262924;border-radius:5px}
+@keyframes blink{0%,55%{opacity:1}56%,100%{opacity:0}}
+</style>
+</helmet>
+
+<nav aria-label="Primary" style="position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px clamp(20px,4vw,48px)">
+  <a href="index.html" style="font-family:'Instrument Serif',serif;font-style:italic;font-size:24px;color:var(--ink);text-decoration:none;text-shadow:0 1px 12px rgba(0,0,0,0.5)">mathi</a>
+  <span style="font-size:12px;letter-spacing:0.18em;color:rgba(232,230,222,0.66);background:rgba(16,18,16,0.45);border:1px solid rgba(232,230,222,0.12);border-radius:999px;padding:10px 22px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)">CASE STUDY 01 / 03</span>
+  <a href="index.html" style="background:rgba(232,230,222,0.1);border:1px solid rgba(232,230,222,0.16);color:var(--ink);font-size:14px;font-weight:500;text-decoration:none;border-radius:999px;padding:12px 24px;backdrop-filter:blur(10px);transition:background .3s" style-hover="background:rgba(232,230,222,0.18)">← Index</a>
+</nav>
+
+<header data-screen-label="Swarm-SAR Hero" style="position:relative;min-height:78vh;display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid var(--line)">
+  <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&amp;fit=crop&amp;w=2000&amp;q=80" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(0.7) brightness(0.62)">
+  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(16,18,16,0.6) 0%, rgba(16,18,16,0.25) 40%, rgba(16,18,16,0.92) 100%)"></div>
+  <div style="position:relative;z-index:2;max-width:1140px;margin:0 auto;width:100%;padding:160px clamp(20px,5vw,48px) clamp(48px,6vw,72px)">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:26px">
+      <span style="font-size:11.5px;letter-spacing:0.18em;color:var(--ink);background:rgba(232,230,222,0.12);border:1px solid rgba(232,230,222,0.2);padding:6px 14px;border-radius:999px;backdrop-filter:blur(8px);white-space:nowrap"><span aria-hidden="true" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:8px;animation:blink 1.8s infinite"></span>ACTIVE RESEARCH · 2026</span>
+      <span style="font-size:11.5px;letter-spacing:0.18em;color:rgba(232,230,222,0.66)">PAPER IN PREPARATION</span>
+    </div>
+    <h1 style="font-size:clamp(42px,6.6vw,88px);font-weight:500;letter-spacing:-0.035em;line-height:1.02;margin:0 0 22px;max-width:20ch;text-wrap:balance;text-shadow:0 2px 36px rgba(0,0,0,0.4)">Swarms that keep <em style="font-family:'Instrument Serif',serif;font-weight:400">searching</em></h1>
+    <p style="font-size:clamp(17px,2vw,22px);color:rgba(232,230,222,0.82);line-height:1.55;margin:0;max-width:46ch;text-wrap:pretty">Decentralized multi-agent reinforcement learning for cooperative search &amp; rescue — under the constraints real disasters actually impose.</p>
+  </div>
+</header>
+
+<div style="max-width:1140px;margin:0 auto;padding:clamp(28px,4vw,44px) clamp(20px,5vw,48px) 0">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden">
+    <div style="background:var(--card);padding:20px 24px"><p style="font-size:10.5px;letter-spacing:0.18em;color:var(--faint);margin:0 0 8px">ROLE</p><p style="font-size:15px;margin:0">Solo researcher &amp; engineer</p></div>
+    <div style="background:var(--card);padding:20px 24px"><p style="font-size:10.5px;letter-spacing:0.18em;color:var(--faint);margin:0 0 8px">TIMELINE</p><p style="font-size:15px;margin:0">06/2025 — present</p></div>
+    <div style="background:var(--card);padding:20px 24px"><p style="font-size:10.5px;letter-spacing:0.18em;color:var(--faint);margin:0 0 8px">METHOD</p><p style="font-size:15px;margin:0">CTDE Multi-Agent PPO</p></div>
+    <div style="background:var(--card);padding:20px 24px"><p style="font-size:10.5px;letter-spacing:0.18em;color:var(--faint);margin:0 0 8px">POLICY</p><p style="font-size:15px;margin:0">Transformer + GNN</p></div>
+  </div>
+</div>
+
+<main style="max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+
+  <section data-screen-label="Problem" style="padding:clamp(64px,8vw,110px) 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(28px,4vw,64px)">
+    <div data-reveal="true">
+      <p style="font-size:12px;letter-spacing:0.24em;color:var(--accent);margin:0 0 18px">01 · PROBLEM</p>
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.12;text-wrap:balance">Most swarm research assumes a world that <em style="font-family:'Instrument Serif',serif;font-weight:400">doesn't exist</em>.</h2>
+    </div>
+    <div data-reveal="true" style="font-size:16.5px;line-height:1.75;color:var(--muted)">
+      <p style="margin:0 0 18px">After a disaster, drone swarms could search collapsed structures faster than any human team. But academic multi-agent RL usually assumes perfect communication, perfect sensing, and infinite battery — assumptions that collapse the moment a swarm leaves the lab.</p>
+      <p style="margin:0">Swarm-SAR asks a harder question: <strong style="color:var(--ink);font-weight:600">how do decentralized swarms cooperate when communication is lossy, sensors are noisy, energy is finite, and hardware fails mid-mission?</strong></p>
+    </div>
+  </section>
+
+  <section data-screen-label="System" style="padding:clamp(64px,8vw,110px) 0;border-bottom:1px solid var(--line)">
+    <div data-reveal="true" style="margin-bottom:clamp(36px,5vw,56px)">
+      <p style="font-size:12px;letter-spacing:0.24em;color:var(--accent);margin:0 0 18px">02 · SYSTEM</p>
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.1">Four pillars, <em style="font-family:'Instrument Serif',serif;font-weight:400">one</em> framework.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:16px">
+      <div data-reveal="true" style="border:1px solid var(--line);border-radius:20px;padding:30px;background:var(--card)">
+        <p style="font-size:11px;letter-spacing:0.2em;color:var(--accent);margin:0 0 14px">POLICY</p>
+        <h3 style="font-size:19px;font-weight:600;margin:0 0 12px;letter-spacing:-0.01em">Transformer + GNN, trained CTDE</h3>
+        <p style="font-size:14.5px;color:var(--muted);line-height:1.7;margin:0">A Transformer handles intra-agent reasoning; a Graph Neural Network passes messages over the <em style="font-style:normal;color:var(--ink)">live communication graph</em> — so coordination degrades gracefully as links drop. Centralized training, fully decentralized execution. Scales 3 → 10 drones.</p>
+      </div>
+      <div data-reveal="true" style="border:1px solid var(--line);border-radius:20px;padding:30px;background:var(--card)">
+        <p style="font-size:11px;letter-spacing:0.2em;color:var(--accent);margin:0 0 14px">SIMULATOR</p>
+        <h3 style="font-size:19px;font-weight:600;margin:0 0 12px;letter-spacing:-0.01em">A new disaster every episode</h3>
+        <p style="font-size:14.5px;color:var(--muted);line-height:1.7;margin:0">Procedurally generated maps — buildings, fire and smoke, no-fly zones, dynamic obstacles, victims — force generalization instead of memorization. Noisy camera/GPS/LiDAR, a battery model, comms with range, latency, and packet loss, plus hardware-fault injection.</p>
+      </div>
+      <div data-reveal="true" style="border:1px solid var(--line);border-radius:20px;padding:30px;background:var(--card)">
+        <p style="font-size:11px;letter-spacing:0.2em;color:var(--accent);margin:0 0 14px">METRIC</p>
+        <h3 style="font-size:19px;font-weight:600;margin:0 0 12px;letter-spacing:-0.01em">The Swarm Intelligence Score</h3>
+        <p style="font-size:14.5px;color:var(--muted);line-height:1.7;margin:0">A novel composite metric — a weighted geometric mean of coverage, rescue, energy, comms, and safety. Its method ranking stays stable under weight perturbation (Spearman ρ = 0.96), so conclusions don't depend on arbitrary weight choices.</p>
+      </div>
+      <div data-reveal="true" style="border:1px solid var(--line);border-radius:20px;padding:30px;background:var(--card)">
+        <p style="font-size:11px;letter-spacing:0.2em;color:var(--accent);margin:0 0 14px">EVALUATION</p>
+        <h3 style="font-size:19px;font-weight:600;margin:0 0 12px;letter-spacing:-0.01em">Rigor by construction</h3>
+        <p style="font-size:14.5px;color:var(--muted);line-height:1.7;margin:0">Benchmarked on a frozen map suite against frontier exploration, Lloyd/Voronoi coverage control, greedy-TSP, and a privileged oracle — reporting IQM with bootstrap confidence intervals (rliable-style), not just mean ± std.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Architecture" style="padding:clamp(64px,8vw,110px) 0;border-bottom:1px solid var(--line)">
+    <div data-reveal="true" style="margin-bottom:clamp(36px,5vw,56px)">
+      <p style="font-size:12px;letter-spacing:0.24em;color:var(--accent);margin:0 0 18px">03 · ARCHITECTURE</p>
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.1">From noisy pixels to <em style="font-family:'Instrument Serif',serif;font-weight:400">coordinated</em> action.</h2>
+    </div>
+    <div data-reveal="true" style="border:1px solid var(--line);border-radius:20px;background:#131512;padding:clamp(24px,4vw,48px);overflow-x:auto">
+      <div style="display:flex;align-items:stretch;gap:14px;min-width:820px">
+        <div style="flex:1;border:1px solid rgba(232,230,222,0.14);border-radius:14px;padding:18px;background:#181b17;display:flex;flex-direction:column;gap:8px">
+          <p style="font-size:10px;letter-spacing:0.18em;color:var(--faint);margin:0">PER-AGENT INPUT</p>
+          <p style="font-size:14px;font-weight:600;margin:0">Noisy observations</p>
+          <p style="font-size:12px;color:var(--faint);margin:0;line-height:1.7">camera · GPS · LiDAR<br>battery · fault state</p>
+        </div>
+        <div aria-hidden="true" style="align-self:center;color:var(--accent);font-size:20px">→</div>
+        <div style="flex:1;border:1px solid rgba(169,188,164,0.4);border-radius:14px;padding:18px;background:rgba(169,188,164,0.07);display:flex;flex-direction:column;gap:8px">
+          <p style="font-size:10px;letter-spacing:0.18em;color:var(--accent);margin:0">INTRA-AGENT</p>
+          <p style="font-size:14px;font-weight:600;margin:0">Transformer encoder</p>
+          <p style="font-size:12px;color:var(--faint);margin:0;line-height:1.7">temporal reasoning<br>over local history</p>
+        </div>
+        <div aria-hidden="true" style="align-self:center;color:var(--accent);font-size:20px">→</div>
+        <div style="flex:1;border:1px solid rgba(169,188,164,0.4);border-radius:14px;padding:18px;background:rgba(169,188,164,0.07);display:flex;flex-direction:column;gap:8px">
+          <p style="font-size:10px;letter-spacing:0.18em;color:var(--accent);margin:0">INTER-AGENT</p>
+          <p style="font-size:14px;font-weight:600;margin:0">GNN message passing</p>
+          <p style="font-size:12px;color:var(--faint);margin:0;line-height:1.7">over the live comm graph<br>range · latency · loss</p>
+        </div>
+        <div aria-hidden="true" style="align-self:center;color:var(--accent);font-size:20px">→</div>
+        <div style="flex:1;border:1px solid rgba(232,230,222,0.14);border-radius:14px;padding:18px;background:#181b17;display:flex;flex-direction:column;gap:8px">
+          <p style="font-size:10px;letter-spacing:0.18em;color:var(--faint);margin:0">OUTPUT</p>
+          <p style="font-size:14px;font-weight:600;margin:0">Decentralized actions</p>
+          <p style="font-size:12px;color:var(--faint);margin:0;line-height:1.7">search · navigate · rescue<br>per agent, no central node</p>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;margin-top:20px;padding-top:20px;border-top:1px dashed rgba(232,230,222,0.14);min-width:820px">
+        <span style="font-size:10px;letter-spacing:0.18em;color:var(--faint)">TRAINING ONLY</span>
+        <span aria-hidden="true" style="flex:1;height:1px;background:var(--line)"></span>
+        <span style="font-size:12.5px;color:var(--muted)">Centralized critic (CTDE) · Multi-Agent PPO · Ray RLlib</span>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Key Result" style="padding:clamp(64px,8vw,110px) 0;border-bottom:1px solid var(--line)">
+    <div data-reveal="true" style="margin-bottom:clamp(36px,5vw,56px)">
+      <p style="font-size:12px;letter-spacing:0.24em;color:var(--accent);margin:0 0 18px">04 · KEY RESULT</p>
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.12;max-width:26ch;text-wrap:balance">Coordination — not exploration — is the <em style="font-family:'Instrument Serif',serif;font-weight:400">bottleneck</em>.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(28px,4vw,56px);align-items:start">
+      <div data-reveal="true" style="border:1px solid var(--line);border-radius:20px;padding:clamp(28px,4vw,44px);background:linear-gradient(160deg, rgba(169,188,164,0.08), var(--card))">
+        <p style="font-size:11px;letter-spacing:0.2em;color:var(--faint);margin:0 0 20px">SWARM INTELLIGENCE SCORE · BENCHMARK RUNS</p>
+        <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:24px">
+          <span style="font-size:clamp(56px,7vw,84px);font-weight:500;letter-spacing:-0.04em;line-height:1;color:rgba(232,230,222,0.4)">25</span>
+          <span aria-hidden="true" style="font-size:clamp(32px,4vw,44px);color:var(--accent)">→</span>
+          <span style="font-size:clamp(56px,7vw,84px);font-weight:500;letter-spacing:-0.04em;line-height:1">72</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px" aria-hidden="true">
+          <div style="display:flex;align-items:center;gap:12px"><span style="font-size:10.5px;color:var(--faint);width:92px;flex:none">COMMS OFF</span><span style="height:10px;border-radius:5px;background:rgba(232,230,222,0.18);width:25%"></span></div>
+          <div style="display:flex;align-items:center;gap:12px"><span style="font-size:10.5px;color:var(--faint);width:92px;flex:none">COMMS ON</span><span style="height:10px;border-radius:5px;background:var(--accent);width:72%"></span></div>
+        </div>
+        <p style="font-size:14px;color:var(--faint);line-height:1.7;margin:0">Composite score across coverage, rescue, energy, comms, and safety. Measured with the heuristic coordination stack on the frozen benchmark suite.</p>
+      </div>
+      <div data-reveal="true" style="font-size:16.5px;line-height:1.75;color:var(--muted)">
+        <p style="margin:0 0 18px">Enabling inter-drone communication nearly <strong style="color:var(--ink);font-weight:600">tripled the composite coordination score (SIS 25 → 72)</strong> even when raw area coverage was unchanged — evidence that coordination, not exploration, limits cooperative SAR.</p>
+        <p style="margin:0 0 18px">The privileged oracle rescued the most victims yet <strong style="color:var(--ink);font-weight:600">scored lower overall</strong>, sacrificing coverage and communication — confirming the metric captures real operational trade-offs rather than rewarding a single objective.</p>
+        <p style="margin:0;font-size:14px;color:var(--faint);border-left:2px solid rgba(169,188,164,0.5);padding-left:16px;line-height:1.7">The MARL policy (Transformer + GNN, CTDE-MAPPO) is designed and implemented; the numbers above are measured from the baseline and heuristic evaluations. Full learned-policy results ship with the paper.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Engineering" style="padding:clamp(64px,8vw,110px) 0;border-bottom:1px solid var(--line)">
+    <div data-reveal="true" style="margin-bottom:clamp(36px,5vw,56px)">
+      <p style="font-size:12px;letter-spacing:0.24em;color:var(--accent);margin:0 0 18px">05 · ENGINEERING</p>
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.1">Built like <em style="font-family:'Instrument Serif',serif;font-weight:400">production</em> code.</h2>
+    </div>
+    <div data-reveal="true" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:20px">
+      <div style="background:var(--card);padding:22px 24px"><p style="font-size:26px;font-weight:500;margin:0;letter-spacing:-0.02em">~73</p><p style="font-size:11px;letter-spacing:0.14em;color:var(--faint);margin:6px 0 0">MODULES</p></div>
+      <div style="background:var(--card);padding:22px 24px"><p style="font-size:26px;font-weight:500;margin:0;letter-spacing:-0.02em">~4,900</p><p style="font-size:11px;letter-spacing:0.14em;color:var(--faint);margin:6px 0 0">LINES OF CODE</p></div>
+      <div style="background:var(--card);padding:22px 24px"><p style="font-size:26px;font-weight:500;margin:0;letter-spacing:-0.02em">31</p><p style="font-size:11px;letter-spacing:0.14em;color:var(--faint);margin:6px 0 0">UNIT TESTS</p></div>
+      <div style="background:var(--card);padding:22px 24px"><p style="font-size:26px;font-weight:500;margin:0;letter-spacing:-0.02em">20+</p><p style="font-size:11px;letter-spacing:0.14em;color:var(--faint);margin:6px 0 0">PUBLICATION FIGURES</p></div>
+      <div style="background:var(--card);padding:22px 24px"><p style="font-size:26px;font-weight:500;margin:0;letter-spacing:-0.02em">CI/CD</p><p style="font-size:11px;letter-spacing:0.14em;color:var(--faint);margin:6px 0 0">DOCKER · ACTIONS</p></div>
+    </div>
+    <div data-reveal="true" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:40px">
+      <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">Python</span>
+      <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">PyTorch</span>
+      <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">PyTorch Geometric</span>
+      <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">Ray RLlib</span>
+      <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">Gymnasium / PettingZoo</span>
+      <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">AirSim / Unreal</span>
+      <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">ROS 2</span>
+      <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">Streamlit</span>
+      <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">Docker</span>
+      <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">GitHub Actions</span>
+    </div>
+    <div data-reveal="true" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:16px">
+      <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Search drone in flight" style="width:100%;height:260px;object-fit:cover;border-radius:16px;display:block;filter:saturate(0.75) brightness(0.88)">
+      <img src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Quadcopter hovering with camera" style="width:100%;height:260px;object-fit:cover;border-radius:16px;display:block;filter:saturate(0.75) brightness(0.88)">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Analytics dashboard with performance charts" style="width:100%;height:260px;object-fit:cover;border-radius:16px;display:block;filter:saturate(0.7) brightness(0.85)">
+    </div>
+  </section>
+
+  <section data-screen-label="Next Steps" style="padding:clamp(64px,8vw,110px) 0">
+    <div data-reveal="true" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(28px,4vw,64px)">
+      <div>
+        <p style="font-size:12px;letter-spacing:0.24em;color:var(--accent);margin:0 0 20px">06 · WHAT'S NEXT</p>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:16px">
+          <li style="font-size:15.5px;color:var(--muted);line-height:1.65;display:flex;gap:14px;align-items:baseline"><span aria-hidden="true" style="color:var(--accent);flex:none">✓</span><span><strong style="color:var(--ink);font-weight:600">Learned-policy runs.</strong> Complete training and report IQM results against the full baseline suite.</span></li>
+          <li style="font-size:15.5px;color:var(--muted);line-height:1.65;display:flex;gap:14px;align-items:baseline"><span aria-hidden="true" style="color:var(--accent);flex:none">✓</span><span><strong style="color:var(--ink);font-weight:600">Publish.</strong> Submit the IEEE-format paper; open-source the framework alongside it.</span></li>
+          <li style="font-size:15.5px;color:var(--muted);line-height:1.65;display:flex;gap:14px;align-items:baseline"><span aria-hidden="true" style="color:var(--accent);flex:none">✓</span><span><strong style="color:var(--ink);font-weight:600">Toward hardware.</strong> Hardware-in-the-loop validation via ROS 2 for sim-to-real transfer.</span></li>
+        </ul>
+      </div>
+      <a href="autonomous-driving.html" style="text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:34px;background:var(--card);display:flex;flex-direction:column;justify-content:space-between;gap:24px;transition:border-color .3s" style-hover="border-color:rgba(232,230,222,0.28)">
+        <p style="font-size:11px;letter-spacing:0.2em;color:var(--faint);margin:0">NEXT CASE STUDY</p>
+        <div>
+          <p style="font-size:24px;font-weight:500;color:var(--ink);margin:0 0 8px;letter-spacing:-0.02em">Autonomous driving, from <em style="font-family:'Instrument Serif',serif;font-weight:400">pixels</em></p>
+          <p style="font-size:14px;color:var(--muted);margin:0">PPO vs. SAC vs. classical control in CARLA <span style="color:var(--accent)">→</span></p>
+        </div>
+      </a>
+    </div>
+    <footer style="margin-top:clamp(64px,8vw,100px);padding-top:28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <p style="font-size:12px;color:rgba(232,230,222,0.32);margin:0">© 2026 Mani Chandan Mathi</p>
+      <a href="index.html" style="font-size:12px;color:var(--muted);text-decoration:none" style-hover="color:var(--ink)">← Back to index</a>
+    </footer>
+  </section>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    this.cleanups = [];
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    const vh = window.innerHeight;
+    const io = new IntersectionObserver((entries) => {
+      for (const en of entries) {
+        if (en.isIntersecting) {
+          en.target.style.opacity = '1';
+          en.target.style.transform = 'translateY(0)';
+          io.unobserve(en.target);
+        }
+      }
+    }, { threshold: 0.12 });
+    els.forEach(el => {
+      if (el.getBoundingClientRect().top > vh * 0.85) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(28px)';
+        el.style.transition = 'opacity .85s cubic-bezier(.16,1,.3,1), transform .85s cubic-bezier(.16,1,.3,1)';
+      }
+      io.observe(el);
+    });
+    this.cleanups.push(() => io.disconnect());
+  }
+  componentWillUnmount() { (this.cleanups || []).forEach(fn => { try { fn(); } catch (e) {} }); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

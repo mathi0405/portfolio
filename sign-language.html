@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Enhanced Communication Through Isolated Sign Language — deep learning gesture recognition, published in IEEE 2023.">
+<title>Isolated Sign Language Recognition — Mani Chandan Mathi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#101210;color:#E8E6DE;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;--accent:#A9BCA4;--ink:#E8E6DE;--muted:rgba(232,230,222,0.6);--faint:rgba(232,230,222,0.42);--line:rgba(232,230,222,0.1);--card:#161815}
+::selection{background:var(--accent);color:#101210}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+::-webkit-scrollbar{width:10px;background:#101210}
+::-webkit-scrollbar-thumb{background:#262924;border-radius:5px}
+</style>
+</helmet>
+
+<nav aria-label="Primary" style="position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px clamp(20px,4vw,48px)">
+  <a href="index.html" style="font-family:'Instrument Serif',serif;font-style:italic;font-size:24px;color:var(--ink);text-decoration:none;text-shadow:0 1px 12px rgba(0,0,0,0.5)">mathi</a>
+  <span style="font-size:12px;letter-spacing:0.18em;color:rgba(232,230,222,0.66);background:rgba(16,18,16,0.45);border:1px solid rgba(232,230,222,0.12);border-radius:999px;padding:10px 22px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)">CASE STUDY 03 / 03</span>
+  <a href="index.html" style="background:rgba(232,230,222,0.1);border:1px solid rgba(232,230,222,0.16);color:var(--ink);font-size:14px;font-weight:500;text-decoration:none;border-radius:999px;padding:12px 24px;backdrop-filter:blur(10px);transition:background .3s" style-hover="background:rgba(232,230,222,0.18)">← Index</a>
+</nav>
+
+<header data-screen-label="Sign Language Hero" style="position:relative;min-height:78vh;display:flex;align-items:flex-end;overflow:hidden;border-bottom:1px solid var(--line)">
+  <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&amp;fit=crop&amp;w=2000&amp;q=80" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(0.7) brightness(0.6)">
+  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(16,18,16,0.6) 0%, rgba(16,18,16,0.28) 40%, rgba(16,18,16,0.92) 100%)"></div>
+  <div style="position:relative;z-index:2;max-width:1140px;margin:0 auto;width:100%;padding:160px clamp(20px,5vw,48px) clamp(48px,6vw,72px)">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:26px">
+      <span style="font-size:11.5px;letter-spacing:0.18em;color:#141613;background:var(--accent);padding:6px 14px;border-radius:999px;font-weight:600;white-space:nowrap">PUBLISHED · IEEE 2023</span>
+      <span style="font-size:11.5px;letter-spacing:0.18em;color:rgba(232,230,222,0.66)">BACHELOR'S THESIS</span>
+    </div>
+    <h1 style="font-size:clamp(38px,5.6vw,74px);font-weight:500;letter-spacing:-0.035em;line-height:1.05;margin:0 0 22px;max-width:22ch;text-wrap:balance;text-shadow:0 2px 36px rgba(0,0,0,0.4)">Sign language, <em style="font-family:'Instrument Serif',serif;font-weight:400">understood</em></h1>
+    <p style="font-size:clamp(17px,2vw,22px);color:rgba(232,230,222,0.82);line-height:1.55;margin:0 0 36px;max-width:48ch;text-wrap:pretty">A deep learning system that recognizes isolated sign-language gestures from video — built to make communication more accessible for hearing-impaired individuals.</p>
+    <a href="https://www.academia.edu/169339715/Enhanced_Communication_Through_Isolated_Sign_Language" target="_blank" rel="noopener" style="display:inline-block;background:#EDEBE3;color:#141613;text-decoration:none;font-weight:600;font-size:14.5px;padding:14px 30px;border-radius:999px;transition:box-shadow .3s" style-hover="box-shadow:0 6px 32px rgba(237,235,227,0.3)">Read the publication ↗</a>
+  </div>
+</header>
+
+<div style="max-width:1140px;margin:0 auto;padding:clamp(28px,4vw,44px) clamp(20px,5vw,48px) 0">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden">
+    <div style="background:var(--card);padding:20px 24px"><p style="font-size:10.5px;letter-spacing:0.18em;color:var(--faint);margin:0 0 8px">ROLE</p><p style="font-size:15px;margin:0">Researcher &amp; developer</p></div>
+    <div style="background:var(--card);padding:20px 24px"><p style="font-size:10.5px;letter-spacing:0.18em;color:var(--faint);margin:0 0 8px">TIMELINE</p><p style="font-size:15px;margin:0">07/2023 — 10/2023</p></div>
+    <div style="background:var(--card);padding:20px 24px"><p style="font-size:10.5px;letter-spacing:0.18em;color:var(--faint);margin:0 0 8px">INPUT</p><p style="font-size:15px;margin:0">Video gesture sequences</p></div>
+    <div style="background:var(--card);padding:20px 24px"><p style="font-size:10.5px;letter-spacing:0.18em;color:var(--faint);margin:0 0 8px">OUTCOME</p><p style="font-size:15px;margin:0">IEEE publication, 2023</p></div>
+  </div>
+</div>
+
+<main style="max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+
+  <section data-screen-label="Motivation" style="padding:clamp(64px,8vw,110px) 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(28px,4vw,64px)">
+    <div data-reveal="true">
+      <p style="font-size:12px;letter-spacing:0.24em;color:var(--accent);margin:0 0 18px">01 · MOTIVATION</p>
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.12;text-wrap:balance">Technology that widens who gets <em style="font-family:'Instrument Serif',serif;font-weight:400">heard</em>.</h2>
+    </div>
+    <div data-reveal="true" style="font-size:16.5px;line-height:1.75;color:var(--muted)">
+      <p style="margin:0 0 18px">Millions of people communicate primarily through sign language, yet most digital systems can't understand a single gesture. Recognizing <strong style="color:var(--ink);font-weight:600">isolated signs from video</strong> is the foundational step toward real-time translation between signers and non-signers.</p>
+      <p style="margin:0">This work — my bachelor's thesis — built and evaluated a deep learning pipeline for that step, and was published in IEEE in 2023.</p>
+    </div>
+  </section>
+
+  <section data-screen-label="Method" style="padding:clamp(64px,8vw,110px) 0;border-bottom:1px solid var(--line)">
+    <div data-reveal="true" style="margin-bottom:clamp(36px,5vw,56px)">
+      <p style="font-size:12px;letter-spacing:0.24em;color:var(--accent);margin:0 0 18px">02 · METHOD</p>
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.1">From video frames to <em style="font-family:'Instrument Serif',serif;font-weight:400">recognized</em> signs.</h2>
+    </div>
+    <div data-reveal="true" style="border:1px solid var(--line);border-radius:20px;background:#131512;padding:clamp(24px,4vw,48px);overflow-x:auto;margin-bottom:20px">
+      <div style="display:flex;align-items:stretch;gap:14px;min-width:820px">
+        <div style="flex:1;border:1px solid rgba(232,230,222,0.14);border-radius:14px;padding:18px;background:#181b17"><p style="font-size:10px;letter-spacing:0.18em;color:var(--faint);margin:0 0 8px">INPUT</p><p style="font-size:14px;font-weight:600;margin:0 0 8px">Video sequence</p><p style="font-size:12px;color:var(--faint);margin:0;line-height:1.7">one isolated gesture<br>per clip</p></div>
+        <div aria-hidden="true" style="align-self:center;color:var(--accent);font-size:20px">→</div>
+        <div style="flex:1;border:1px solid rgba(232,230,222,0.14);border-radius:14px;padding:18px;background:#181b17"><p style="font-size:10px;letter-spacing:0.18em;color:var(--faint);margin:0 0 8px">PREPROCESSING</p><p style="font-size:14px;font-weight:600;margin:0 0 8px">Frame extraction</p><p style="font-size:12px;color:var(--faint);margin:0;line-height:1.7">OpenCV · normalization<br>NumPy pipelines</p></div>
+        <div aria-hidden="true" style="align-self:center;color:var(--accent);font-size:20px">→</div>
+        <div style="flex:1;border:1px solid rgba(169,188,164,0.4);border-radius:14px;padding:18px;background:rgba(169,188,164,0.07)"><p style="font-size:10px;letter-spacing:0.18em;color:var(--accent);margin:0 0 8px">LEARNING</p><p style="font-size:14px;font-weight:600;margin:0 0 8px">Deep neural network</p><p style="font-size:12px;color:var(--faint);margin:0;line-height:1.7">TensorFlow · spatiotemporal<br>gesture features</p></div>
+        <div aria-hidden="true" style="align-self:center;color:var(--accent);font-size:20px">→</div>
+        <div style="flex:1;border:1px solid rgba(232,230,222,0.14);border-radius:14px;padding:18px;background:#181b17"><p style="font-size:10px;letter-spacing:0.18em;color:var(--faint);margin:0 0 8px">OUTPUT</p><p style="font-size:14px;font-weight:600;margin:0 0 8px">Sign classification</p><p style="font-size:12px;color:var(--faint);margin:0;line-height:1.7">evaluated with<br>scikit-learn metrics</p></div>
+      </div>
+    </div>
+    <div data-reveal="true" style="display:flex;flex-wrap:wrap;gap:8px">
+      <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">Python</span>
+      <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">TensorFlow</span>
+      <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">OpenCV</span>
+      <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">NumPy</span>
+      <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">scikit-learn</span>
+      <span style="font-size:12px;color:var(--muted);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:6px 14px">Jupyter</span>
+    </div>
+  </section>
+
+  <section data-screen-label="Outcome" style="padding:clamp(64px,8vw,110px) 0;border-bottom:1px solid var(--line)">
+    <div data-reveal="true" style="margin-bottom:clamp(36px,5vw,56px)">
+      <p style="font-size:12px;letter-spacing:0.24em;color:var(--accent);margin:0 0 18px">03 · OUTCOME &amp; LINEAGE</p>
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.1">Where the perception thread <em style="font-family:'Instrument Serif',serif;font-weight:400">started</em>.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(28px,4vw,56px);align-items:start">
+      <div data-reveal="true" style="font-size:16.5px;line-height:1.75;color:var(--muted)">
+        <p style="margin:0 0 18px">The thesis was <strong style="color:var(--ink);font-weight:600">published in IEEE in 2023</strong> — my first peer-reviewed work, and the start of a through-line: teaching machines to see.</p>
+        <p style="margin:0 0 18px">A companion case study — <em style="font-style:normal;color:var(--ink)">A Framework for Keypoint Neural Invariant Feature Transform</em> (PyTorch, MATLAB) — pushed the same thread toward robust keypoint detection and matching under varying illumination and perspective.</p>
+        <p style="margin:0">That perception foundation now feeds the vision stacks in my autonomous-driving and Swarm-SAR work — from recognizing a hand sign to recognizing a victim in smoke.</p>
+      </div>
+      <div data-reveal="true" style="display:flex;flex-direction:column;gap:16px">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Hands communicating by gesture" style="width:100%;height:230px;object-fit:cover;border-radius:16px;display:block;filter:saturate(0.7) brightness(0.85)">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Charts showing model evaluation results" style="width:100%;height:230px;object-fit:cover;border-radius:16px;display:block;filter:saturate(0.7) brightness(0.85)">
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Next" style="padding:clamp(64px,8vw,110px) 0">
+    <a data-reveal="true" href="swarm-sar.html" style="text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:34px;background:var(--card);display:flex;flex-direction:column;gap:24px;transition:border-color .3s" style-hover="border-color:rgba(232,230,222,0.28)">
+      <p style="font-size:11px;letter-spacing:0.2em;color:var(--faint);margin:0">NEXT CASE STUDY</p>
+      <div>
+        <p style="font-size:24px;font-weight:500;color:var(--ink);margin:0 0 8px;letter-spacing:-0.02em">Swarms that keep <em style="font-family:'Instrument Serif',serif;font-weight:400">searching</em></p>
+        <p style="font-size:14px;color:var(--muted);margin:0">Decentralized multi-agent RL for cooperative search &amp; rescue <span style="color:var(--accent)">→</span></p>
+      </div>
+    </a>
+    <footer style="margin-top:clamp(64px,8vw,100px);padding-top:28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <p style="font-size:12px;color:rgba(232,230,222,0.32);margin:0">© 2026 Mani Chandan Mathi</p>
+      <a href="index.html" style="font-size:12px;color:var(--muted);text-decoration:none" style-hover="color:var(--ink)">← Back to index</a>
+    </footer>
+  </section>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    this.cleanups = [];
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    const vh = window.innerHeight;
+    const io = new IntersectionObserver((entries) => {
+      for (const en of entries) {
+        if (en.isIntersecting) {
+          en.target.style.opacity = '1';
+          en.target.style.transform = 'translateY(0)';
+          io.unobserve(en.target);
+        }
+      }
+    }, { threshold: 0.12 });
+    els.forEach(el => {
+      if (el.getBoundingClientRect().top > vh * 0.85) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(28px)';
+        el.style.transition = 'opacity .85s cubic-bezier(.16,1,.3,1), transform .85s cubic-bezier(.16,1,.3,1)';
+      }
+      io.observe(el);
+    });
+    this.cleanups.push(() => io.disconnect());
+  }
+  componentWillUnmount() { (this.cleanups || []).forEach(fn => { try { fn(); } catch (e) {} }); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

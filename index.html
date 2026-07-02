@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mani Chandan Mathi — AI engineer and robotics researcher. Reinforcement learning, multi-agent systems, computer vision, autonomous systems.">
+<meta property="og:title" content="Mani Chandan Mathi — Building Intelligent Systems for the Future">
+<title>Mani Chandan Mathi — AI &amp; Robotics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#101210;color:#E8E6DE;font-family:'Instrument Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;--accent:#A9BCA4;--ink:#E8E6DE;--muted:rgba(232,230,222,0.6);--faint:rgba(232,230,222,0.42);--line:rgba(232,230,222,0.1);--card:#161815}
+::selection{background:var(--accent);color:#101210}
+a{-webkit-tap-highlight-color:transparent}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+::-webkit-scrollbar{width:10px;background:#101210}
+::-webkit-scrollbar-thumb{background:#26292491;border-radius:5px}
+@keyframes scrollDot{0%{transform:translateY(0);opacity:0}15%{opacity:1}80%{opacity:1}100%{transform:translateY(26px);opacity:0}}
+@keyframes blink{0%,55%{opacity:1}56%,100%{opacity:0}}
+</style>
+</helmet>
+
+<a href="#work" style="position:absolute;left:-9999px;top:0;background:var(--accent);color:#101210;padding:10px 16px;z-index:200;font-size:14px" style-focus="left:16px;top:16px">Skip to content</a>
+
+<!-- ============ NAV ============ -->
+<nav aria-label="Primary" style="position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px clamp(20px,4vw,48px)">
+  <a href="#top" style="font-family:'Instrument Serif',serif;font-style:italic;font-size:24px;color:var(--ink);text-decoration:none;letter-spacing:0.01em;text-shadow:0 1px 12px rgba(0,0,0,0.5)">mathi</a>
+  <div style="display:flex;align-items:center;gap:clamp(8px,2vw,28px);background:rgba(16,18,16,0.45);border:1px solid rgba(232,230,222,0.1);border-radius:999px;padding:10px clamp(16px,2.5vw,28px);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)">
+    <a href="#work" style="font-size:14px;color:var(--muted);text-decoration:none" style-hover="color:var(--ink)">Work</a>
+    <a href="#skills" style="font-size:14px;color:var(--muted);text-decoration:none" style-hover="color:var(--ink)">Skills</a>
+    <a href="#research" style="font-size:14px;color:var(--muted);text-decoration:none" style-hover="color:var(--ink)">Research</a>
+    <a href="#github" style="font-size:14px;color:var(--muted);text-decoration:none" style-hover="color:var(--ink)">GitHub</a>
+    <a href="#contact" style="font-size:14px;color:var(--muted);text-decoration:none" style-hover="color:var(--ink)">Contact</a>
+  </div>
+  <a href="resume.pdf" download="Mani-Chandan-Mathi-Resume.pdf" data-magnetic="true" style="background:#EDEBE3;color:#141613;font-size:14px;font-weight:600;text-decoration:none;border-radius:999px;padding:12px 24px;transition:box-shadow .3s" style-hover="box-shadow:0 4px 28px rgba(237,235,227,0.28)">Resume</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header id="top" data-screen-label="Hero" style="position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;background:#101210">
+  <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&amp;fit=crop&amp;w=2000&amp;q=80" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(0.72) brightness(0.72)">
+  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(16,18,16,0.55) 0%, rgba(16,18,16,0.18) 38%, rgba(16,18,16,0.32) 68%, rgba(16,18,16,0.9) 100%)"></div>
+  <div style="position:relative;z-index:2;max-width:940px;margin:0 auto;padding:120px clamp(20px,5vw,48px) 150px;text-align:center;display:flex;flex-direction:column;align-items:center">
+    <p data-reveal="true" style="display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:0.22em;color:var(--ink);background:rgba(16,18,16,0.42);border:1px solid rgba(232,230,222,0.16);border-radius:999px;padding:9px 20px;margin:0 0 34px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)"><span aria-hidden="true" style="width:7px;height:7px;border-radius:50%;background:var(--accent)"></span>AI · ROBOTICS · REINFORCEMENT LEARNING</p>
+    <h1 data-reveal="true" style="font-size:clamp(46px,7.4vw,102px);line-height:1.02;letter-spacing:-0.035em;font-weight:500;margin:0 0 30px;text-wrap:balance;text-shadow:0 2px 40px rgba(0,0,0,0.35)">Building intelligent systems<br>for the <em style="font-family:'Instrument Serif',serif;font-weight:400;letter-spacing:-0.01em">future</em></h1>
+    <p data-reveal="true" style="font-size:clamp(16px,1.8vw,19px);color:rgba(232,230,222,0.82);max-width:52ch;line-height:1.65;margin:0 0 40px;text-wrap:pretty">M.Eng Intelligent Robotics at Deggendorf Institute of Technology. Currently building Swarm-SAR — decentralized multi-agent reinforcement learning for cooperative search &amp; rescue.</p>
+    <div data-reveal="true" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+      <a href="#work" data-magnetic="true" style="background:#EDEBE3;color:#141613;text-decoration:none;font-weight:600;font-size:15px;padding:15px 32px;border-radius:999px;transition:box-shadow .3s" style-hover="box-shadow:0 6px 36px rgba(237,235,227,0.3)">View projects</a>
+      <a href="#research" data-magnetic="true" style="color:var(--ink);text-decoration:none;font-weight:500;font-size:15px;padding:15px 32px;border-radius:999px;background:rgba(232,230,222,0.1);border:1px solid rgba(232,230,222,0.16);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:background .3s" style-hover="background:rgba(232,230,222,0.18)">Research</a>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:0;left:0;right:0;z-index:2">
+    <div style="max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,48px) 40px;display:flex;justify-content:center;gap:clamp(24px,5vw,72px);flex-wrap:wrap">
+      <div style="text-align:center;padding:0 clamp(12px,2vw,32px)">
+        <p style="font-size:clamp(30px,3.4vw,44px);font-weight:500;letter-spacing:-0.03em;margin:0;text-shadow:0 1px 18px rgba(0,0,0,0.5)"><span data-count="95">95</span>%</p>
+        <p style="font-size:13px;color:rgba(232,230,222,0.68);margin:6px 0 0">PPO route success, in CARLA</p>
+      </div>
+      <div aria-hidden="true" style="width:1px;background:rgba(232,230,222,0.22);align-self:stretch"></div>
+      <div style="text-align:center;padding:0 clamp(12px,2vw,32px)">
+        <p style="font-size:clamp(30px,3.4vw,44px);font-weight:500;letter-spacing:-0.03em;margin:0;text-shadow:0 1px 18px rgba(0,0,0,0.5)">3→<span data-count="10">10</span></p>
+        <p style="font-size:13px;color:rgba(232,230,222,0.68);margin:6px 0 0">drones scaled, Swarm-SAR</p>
+      </div>
+      <div aria-hidden="true" style="width:1px;background:rgba(232,230,222,0.22);align-self:stretch"></div>
+      <div style="text-align:center;padding:0 clamp(12px,2vw,32px)">
+        <p style="font-size:clamp(30px,3.4vw,44px);font-weight:500;letter-spacing:-0.03em;margin:0;text-shadow:0 1px 18px rgba(0,0,0,0.5)">IEEE</p>
+        <p style="font-size:13px;color:rgba(232,230,222,0.68);margin:6px 0 0">published, 2023</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ WORK ============ -->
+<section id="work" data-screen-label="Featured Projects" style="max-width:1240px;margin:0 auto;padding:clamp(90px,10vw,150px) clamp(20px,5vw,48px) 40px;scroll-margin-top:80px">
+  <div data-reveal="true" style="text-align:center;max-width:760px;margin:0 auto clamp(52px,6vw,84px)">
+    <h2 style="font-size:clamp(36px,4.8vw,62px);font-weight:500;letter-spacing:-0.03em;margin:0 0 20px;line-height:1.08;text-wrap:balance">Three projects. <em style="font-family:'Instrument Serif',serif;font-weight:400">Complete</em> stories.</h2>
+    <p style="font-size:16.5px;color:var(--muted);line-height:1.65;margin:0;text-wrap:pretty">Every project runs the full arc — problem, method, evidence — built to remove doubt, not add to it.</p>
+  </div>
+
+  <!-- Project 1 : Swarm-SAR (photo card) -->
+  <article data-reveal="true" style="position:relative;border-radius:24px;overflow:hidden;margin-bottom:24px;border:1px solid var(--line)">
+    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&amp;fit=crop&amp;w=1800&amp;q=80" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(0.7) brightness(0.6)">
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(100deg, rgba(14,16,14,0.88) 0%, rgba(14,16,14,0.6) 52%, rgba(14,16,14,0.35) 100%)"></div>
+    <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:clamp(28px,4vw,56px);padding:clamp(32px,4.5vw,64px)">
+      <div style="display:flex;flex-direction:column;gap:22px;min-width:0">
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <span style="font-size:11.5px;letter-spacing:0.18em;color:var(--ink);background:rgba(232,230,222,0.12);border:1px solid rgba(232,230,222,0.18);padding:6px 14px;border-radius:999px;backdrop-filter:blur(8px);white-space:nowrap"><span aria-hidden="true" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:8px;animation:blink 1.8s infinite"></span>ACTIVE RESEARCH · 2026</span>
+        </div>
+        <h3 style="font-size:clamp(30px,3.6vw,48px);font-weight:500;letter-spacing:-0.03em;margin:0;line-height:1.05">Swarm-SAR — swarms that keep <em style="font-family:'Instrument Serif',serif;font-weight:400">searching</em></h3>
+        <p style="font-size:16px;line-height:1.7;color:rgba(232,230,222,0.78);margin:0;max-width:52ch">Decentralized drone swarms searching unknown disaster zones under realistic communication, sensing, energy, and fault constraints. A Transformer + GNN policy trained with CTDE Multi-Agent PPO — and a novel Swarm Intelligence Score benchmarked against classical baselines.</p>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px">
+          <li style="display:flex;gap:12px;align-items:baseline;font-size:15px;line-height:1.6;color:rgba(232,230,222,0.75)"><span aria-hidden="true" style="color:var(--accent);flex:none">✓</span><span><strong style="color:var(--ink);font-weight:600">Comms tripled coordination.</strong> SIS 25 → 72 with inter-drone communication — coverage unchanged.</span></li>
+          <li style="display:flex;gap:12px;align-items:baseline;font-size:15px;line-height:1.6;color:rgba(232,230,222,0.75)"><span aria-hidden="true" style="color:var(--accent);flex:none">✓</span><span><strong style="color:var(--ink);font-weight:600">A metric that holds.</strong> Ranking stable under weight perturbation, Spearman ρ = 0.96.</span></li>
+          <li style="display:flex;gap:12px;align-items:baseline;font-size:15px;line-height:1.6;color:rgba(232,230,222,0.75)"><span aria-hidden="true" style="color:var(--accent);flex:none">✓</span><span><strong style="color:var(--ink);font-weight:600">A new disaster every episode.</strong> Procedural maps force generalization, not memorization.</span></li>
+        </ul>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:6px">
+          <a href="swarm-sar.html" data-magnetic="true" style="background:#EDEBE3;color:#141613;text-decoration:none;font-weight:600;font-size:14.5px;padding:13px 28px;border-radius:999px;transition:box-shadow .3s" style-hover="box-shadow:0 6px 32px rgba(237,235,227,0.3)">Read the case study</a>
+          <span style="font-size:13px;color:rgba(232,230,222,0.55);align-self:center">Code publishes with the paper</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;justify-content:center">
+        <div style="background:rgba(20,22,19,0.62);border:1px solid rgba(232,230,222,0.14);border-radius:18px;padding:22px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)">
+          <p style="font-size:11px;letter-spacing:0.2em;color:rgba(232,230,222,0.55);margin:0 0 16px">SWARM INTELLIGENCE SCORE · LAST BENCHMARK</p>
+          <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:16px">
+            <span style="font-size:44px;font-weight:500;letter-spacing:-0.03em;color:rgba(232,230,222,0.45);line-height:1">25</span>
+            <span aria-hidden="true" style="font-size:24px;color:var(--accent)">→</span>
+            <span style="font-size:44px;font-weight:500;letter-spacing:-0.03em;line-height:1">72</span>
+            <span style="font-size:12.5px;color:var(--accent);margin-left:auto">comms enabled</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px" aria-hidden="true">
+            <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11px;color:rgba(232,230,222,0.5);width:80px;flex:none">COMMS OFF</span><span style="height:8px;border-radius:4px;background:rgba(232,230,222,0.2);width:25%"></span></div>
+            <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11px;color:rgba(232,230,222,0.5);width:80px;flex:none">COMMS ON</span><span style="height:8px;border-radius:4px;background:var(--accent);width:72%"></span></div>
+          </div>
+        </div>
+        <div style="background:rgba(20,22,19,0.62);border:1px solid rgba(232,230,222,0.14);border-radius:18px;padding:14px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)">
+          <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Drone in flight over open terrain" style="width:100%;height:210px;object-fit:cover;border-radius:10px;display:block;filter:saturate(0.75) brightness(0.9)">
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Projects 2 + 3 -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr));gap:24px">
+    <article data-reveal="true" style="border:1px solid var(--line);border-radius:24px;background:var(--card);padding:clamp(28px,3.5vw,44px);display:flex;flex-direction:column;gap:20px;transition:border-color .35s" style-hover="border-color:rgba(232,230,222,0.24)">
+      <span style="font-size:11.5px;letter-spacing:0.18em;color:rgba(232,230,222,0.65);border:1px solid rgba(232,230,222,0.14);padding:6px 14px;border-radius:999px;align-self:flex-start;white-space:nowrap">OPEN SOURCE · 2025</span>
+      <h3 style="font-size:clamp(26px,2.8vw,36px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.1">Autonomous driving, from <em style="font-family:'Instrument Serif',serif;font-weight:400">pixels</em></h3>
+      <p style="font-size:15.5px;line-height:1.7;color:var(--muted);margin:0">PPO and SAC benchmarked against PID and Stanley controllers in CARLA. The PPO agent reaches 95% route success from raw camera pixels — no privileged map or state.</p>
+      <div style="border:1px solid var(--line);border-radius:14px;overflow:hidden;font-family:'JetBrains Mono',monospace;font-size:12px">
+        <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;background:rgba(232,230,222,0.05);padding:10px 16px;color:var(--faint);letter-spacing:0.08em;font-size:10.5px;gap:8px"><span>AGENT</span><span>SUCCESS</span><span>COLLISION</span></div>
+        <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;padding:10px 16px;border-top:1px solid var(--line);gap:8px"><span style="color:var(--accent)">PPO</span><span>95%</span><span>0.05</span></div>
+        <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;padding:10px 16px;border-top:1px solid var(--line);gap:8px;color:var(--muted)"><span>SAC</span><span>85%</span><span>0.15</span></div>
+        <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;padding:10px 16px;border-top:1px solid var(--line);gap:8px;color:var(--faint)"><span>PID / Stanley</span><span>100%</span><span>0.00</span></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:auto">
+        <a href="autonomous-driving.html" data-magnetic="true" style="background:#EDEBE3;color:#141613;text-decoration:none;font-weight:600;font-size:14px;padding:12px 24px;border-radius:999px;transition:box-shadow .3s" style-hover="box-shadow:0 6px 32px rgba(237,235,227,0.3)">Case study</a>
+        <a href="https://github.com/mathi0405/Autonomous-driving" target="_blank" rel="noopener" data-magnetic="true" style="color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;padding:12px 24px;border-radius:999px;background:rgba(232,230,222,0.07);border:1px solid rgba(232,230,222,0.14);transition:background .3s" style-hover="background:rgba(232,230,222,0.14)">GitHub ↗</a>
+      </div>
+    </article>
+    <article data-reveal="true" style="border:1px solid var(--line);border-radius:24px;background:var(--card);padding:clamp(28px,3.5vw,44px);display:flex;flex-direction:column;gap:20px;transition:border-color .35s" style-hover="border-color:rgba(232,230,222,0.24)">
+      <span style="font-size:11.5px;letter-spacing:0.18em;color:#141613;background:var(--accent);padding:6px 14px;border-radius:999px;align-self:flex-start;font-weight:600;white-space:nowrap">PUBLISHED · IEEE 2023</span>
+      <h3 style="font-size:clamp(26px,2.8vw,36px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.1">Sign language, <em style="font-family:'Instrument Serif',serif;font-weight:400">understood</em></h3>
+      <p style="font-size:15.5px;line-height:1.7;color:var(--muted);margin:0">A deep learning system recognizing isolated sign-language gestures from video — built to widen who gets heard. Bachelor's thesis, published in IEEE, 2023.</p>
+      <div style="border:1px solid var(--line);border-radius:14px;padding:6px;background:rgba(232,230,222,0.03)">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Hands communicating by gesture" style="width:100%;height:180px;object-fit:cover;border-radius:10px;display:block;filter:saturate(0.7) brightness(0.85)">
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:auto">
+        <a href="sign-language.html" data-magnetic="true" style="background:#EDEBE3;color:#141613;text-decoration:none;font-weight:600;font-size:14px;padding:12px 24px;border-radius:999px;transition:box-shadow .3s" style-hover="box-shadow:0 6px 32px rgba(237,235,227,0.3)">Case study</a>
+        <a href="https://www.academia.edu/169339715/Enhanced_Communication_Through_Isolated_Sign_Language" target="_blank" rel="noopener" data-magnetic="true" style="color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;padding:12px 24px;border-radius:999px;background:rgba(232,230,222,0.07);border:1px solid rgba(232,230,222,0.14);transition:background .3s" style-hover="background:rgba(232,230,222,0.14)">Publication ↗</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills" data-screen-label="Skills Graph" style="max-width:1240px;margin:0 auto;padding:clamp(90px,10vw,150px) clamp(20px,5vw,48px);scroll-margin-top:80px">
+  <div data-reveal="true" style="text-align:center;max-width:720px;margin:0 auto clamp(40px,5vw,64px)">
+    <h2 style="font-size:clamp(36px,4.8vw,62px);font-weight:500;letter-spacing:-0.03em;margin:0 0 20px;line-height:1.08">One <em style="font-family:'Instrument Serif',serif;font-weight:400">connected</em> system.</h2>
+    <p style="font-size:16.5px;color:var(--muted);line-height:1.65;margin:0;text-wrap:pretty">Languages, learning algorithms, perception, simulation, and engineering practice — every node here has shipped in a real project. Hover to trace the connections.</p>
+  </div>
+  <div ref="{{ skillsWrapRef }}" data-reveal="true" role="img" aria-label="Interactive graph of skills: Python, C++, MATLAB, Multi-Agent PPO, SAC, CTDE, Gymnasium, PettingZoo, Stable-Baselines3, Ray RLlib, reward shaping, PyTorch, TensorFlow, OpenCV, computer vision, deep learning, PyTorch Geometric, scikit-learn, NumPy, ROS 2, CARLA, AirSim, Gazebo, motion planning, machine vision, Docker, Git, GitHub Actions, Linux, Streamlit, UiPath" style="position:relative;height:clamp(520px,60vw,660px);border:1px solid var(--line);border-radius:24px;background:radial-gradient(ellipse 60% 50% at 50% 45%, rgba(169,188,164,0.06), transparent 70%), #131512;overflow:hidden">
+    <canvas ref="{{ skillsCanvasRef }}" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+    <sc-for list="{{ clusterHubs }}" as="hub" hint-placeholder-count="5">
+      <span aria-hidden="true" style="position:absolute;left:{{ hub.x }}%;top:{{ hub.y }}%;transform:translate(-50%,-50%);font-size:10.5px;letter-spacing:0.22em;color:rgba(232,230,222,0.35);pointer-events:none;white-space:nowrap">{{ hub.label }}</span>
+    </sc-for>
+    <sc-for list="{{ skillNodes }}" as="n" hint-placeholder-count="8">
+      <span onMouseEnter="{{ n.enter }}" onMouseLeave="{{ n.leave }}" style="position:absolute;left:{{ n.x }}%;top:{{ n.y }}%;transform:translate(-50%,-50%);font-size:12.5px;color:rgba(232,230,222,0.72);background:rgba(19,21,18,0.85);border:1px solid rgba(232,230,222,0.13);border-radius:999px;padding:7px 14px;white-space:nowrap;cursor:default;transition:border-color .25s,color .25s,box-shadow .25s;backdrop-filter:blur(6px)" style-hover="border-color:var(--accent);color:#E8E6DE;box-shadow:0 0 24px rgba(169,188,164,0.3)">{{ n.label }}</span>
+    </sc-for>
+  </div>
+</section>
+
+<!-- ============ RESEARCH ============ -->
+<section id="research" data-screen-label="Research" style="border-top:1px solid var(--line);background:#131512;scroll-margin-top:80px">
+  <div style="max-width:1240px;margin:0 auto;padding:clamp(90px,10vw,150px) clamp(20px,5vw,48px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:clamp(36px,5vw,80px)">
+      <div data-reveal="true">
+        <p style="display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:0.24em;color:var(--accent);margin:0 0 22px"><span aria-hidden="true" style="width:14px;height:14px;border:1.5px solid var(--accent);border-radius:50%;display:inline-flex;align-items:center;justify-content:center"><span style="width:4px;height:4px;border-radius:50%;background:var(--accent)"></span></span>EVIDENCE, ALWAYS READY</p>
+        <h2 style="font-size:clamp(34px,4.2vw,56px);font-weight:500;letter-spacing:-0.03em;margin:0 0 24px;line-height:1.1;text-wrap:balance">Research that <em style="font-family:'Instrument Serif',serif;font-weight:400">holds up</em>, not just impresses</h2>
+        <p style="font-size:16.5px;color:var(--muted);line-height:1.75;margin:0 0 32px;max-width:56ch">Frozen benchmark suites, IQM with bootstrap confidence intervals, metrics validated for stability — results built to survive a reviewer, not just a demo day.</p>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:18px">
+          <li style="display:flex;gap:14px;align-items:baseline;font-size:15.5px;line-height:1.65;color:var(--muted)"><span aria-hidden="true" style="color:var(--accent);flex:none">✓</span><span><strong style="color:var(--ink);font-weight:600">Multi-agent coordination.</strong> How decentralized agents cooperate when communication is expensive, lossy, and late.</span></li>
+          <li style="display:flex;gap:14px;align-items:baseline;font-size:15.5px;line-height:1.65;color:var(--muted)"><span aria-hidden="true" style="color:var(--accent);flex:none">✓</span><span><strong style="color:var(--ink);font-weight:600">Learning under real constraints.</strong> Energy budgets, sensor noise, hardware faults — policies that survive contact with the world.</span></li>
+          <li style="display:flex;gap:14px;align-items:baseline;font-size:15.5px;line-height:1.65;color:var(--muted)"><span aria-hidden="true" style="color:var(--accent);flex:none">✓</span><span><strong style="color:var(--ink);font-weight:600">Perception for autonomy.</strong> From invariant keypoints to end-to-end pixel policies — vision as the primary sensor.</span></li>
+        </ul>
+      </div>
+      <div data-reveal="true" style="display:flex;flex-direction:column;justify-content:center">
+        <a href="https://www.academia.edu/169339715/Enhanced_Communication_Through_Isolated_Sign_Language" target="_blank" rel="noopener" style="text-decoration:none;padding:26px 0;border-top:1px solid var(--line);display:block;transition:padding-left .3s" style-hover="padding-left:12px">
+          <div style="display:flex;justify-content:space-between;gap:16px;align-items:baseline">
+            <p style="font-size:19px;font-weight:600;color:var(--ink);margin:0 0 8px;letter-spacing:-0.01em;line-height:1.35">Enhanced Communication Through Isolated Sign Language <span style="color:var(--accent)">↗</span></p>
+            <span style="font-size:13px;color:var(--faint);white-space:nowrap">2023</span>
+          </div>
+          <p style="font-size:12.5px;letter-spacing:0.12em;color:var(--accent);margin:0">IEEE · PUBLISHED · BACHELOR'S THESIS</p>
+        </a>
+        <div style="padding:26px 0;border-top:1px solid var(--line)">
+          <div style="display:flex;justify-content:space-between;gap:16px;align-items:baseline">
+            <p style="font-size:19px;font-weight:600;color:var(--ink);margin:0 0 8px;letter-spacing:-0.01em;line-height:1.35">A Framework for Keypoint Neural Invariant Feature Transform</p>
+            <span style="font-size:13px;color:var(--faint);white-space:nowrap">2022–23</span>
+          </div>
+          <p style="font-size:12.5px;letter-spacing:0.12em;color:var(--faint);margin:0 0 10px">BACHELOR'S CASE STUDY · PYTORCH · MATLAB</p>
+          <p style="font-size:14.5px;color:var(--muted);line-height:1.65;margin:0;max-width:56ch">Neural networks combined with invariant feature transforms for robust keypoint detection and matching under varying illumination and perspective.</p>
+        </div>
+        <div style="padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+          <div style="display:flex;justify-content:space-between;gap:16px;align-items:baseline">
+            <p style="font-size:19px;font-weight:600;color:var(--ink);margin:0 0 8px;letter-spacing:-0.01em;line-height:1.35">Swarm-SAR: Decentralized MARL for Cooperative Search &amp; Rescue</p>
+            <span style="font-size:13px;color:var(--faint);white-space:nowrap">2026</span>
+          </div>
+          <p style="font-size:12.5px;letter-spacing:0.12em;color:var(--muted);margin:0 0 10px"><span aria-hidden="true" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:8px;animation:blink 1.6s infinite"></span>IEEE FORMAT · IN PREPARATION</p>
+          <p style="font-size:14.5px;color:var(--muted);line-height:1.65;margin:0;max-width:56ch">Introduces the Swarm Intelligence Score and shows communication quality — not raw exploration — is the main bottleneck in coordinated rescue.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GITHUB ============ -->
+<section id="github" data-screen-label="GitHub" style="max-width:1240px;margin:0 auto;padding:clamp(90px,10vw,150px) clamp(20px,5vw,48px);scroll-margin-top:80px">
+  <div data-reveal="true" style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:clamp(40px,5vw,64px)">
+    <h2 style="font-size:clamp(34px,4.2vw,56px);font-weight:500;letter-spacing:-0.03em;margin:0;line-height:1.08">Code you can <em style="font-family:'Instrument Serif',serif;font-weight:400">verify</em>.</h2>
+    <a href="https://github.com/mathi0405" target="_blank" rel="noopener" data-magnetic="true" style="font-size:14px;color:var(--ink);text-decoration:none;background:rgba(232,230,222,0.07);border:1px solid rgba(232,230,222,0.14);border-radius:999px;padding:12px 24px;transition:background .3s" style-hover="background:rgba(232,230,222,0.14)">@mathi0405 ↗</a>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));gap:20px">
+    <a data-reveal="true" href="https://github.com/mathi0405/Autonomous-driving" target="_blank" rel="noopener" style="text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:30px;background:var(--card);display:flex;flex-direction:column;gap:16px;transition:border-color .3s,transform .3s" style-hover="border-color:rgba(232,230,222,0.26);transform:translateY(-4px)">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px 12px">
+        <p style="font-family:'JetBrains Mono',monospace;font-size:14.5px;font-weight:500;color:var(--ink);margin:0;overflow-wrap:anywhere">mathi0405/<span style="color:var(--accent)">Autonomous-driving</span></p>
+        <span style="font-size:10.5px;letter-spacing:0.12em;color:var(--muted);border:1px solid rgba(232,230,222,0.14);border-radius:999px;padding:4px 12px;white-space:nowrap">PUBLIC</span>
+      </div>
+      <p style="font-size:14.5px;color:var(--muted);line-height:1.65;margin:0">PPO &amp; SAC vs. classical controllers in CARLA. Reproducible training, automated evaluation, CI on every push — lint, typecheck, tests, smoke run, dashboard.</p>
+      <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:var(--faint);margin-top:auto">
+        <span style="display:flex;align-items:center;gap:7px"><span aria-hidden="true" style="width:9px;height:9px;border-radius:50%;background:#8FA6B8;display:inline-block"></span>Python</span>
+        <span>MIT License</span>
+        <span style="color:var(--accent)">● CI passing</span>
+      </div>
+    </a>
+    <div data-reveal="true" style="border:1px solid var(--line);border-radius:20px;padding:30px;background:linear-gradient(160deg,#191c17,#161815);display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px 12px">
+        <p style="font-family:'JetBrains Mono',monospace;font-size:14.5px;font-weight:500;color:var(--ink);margin:0;overflow-wrap:anywhere">mathi0405/<span style="color:var(--accent)">Swarm-SAR</span></p>
+        <span style="font-size:10.5px;letter-spacing:0.12em;color:#141613;background:var(--accent);border-radius:999px;padding:4px 12px;font-weight:600;white-space:nowrap">IN DEVELOPMENT</span>
+      </div>
+      <p style="font-size:14.5px;color:var(--muted);line-height:1.65;margin:0">~73 modules, ~4,900 LOC, 31 unit tests, Dockerized, Streamlit dashboard, 20+ publication figures. Repository opens with the paper release.</p>
+      <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:var(--faint);margin-top:auto">
+        <span style="display:flex;align-items:center;gap:7px"><span aria-hidden="true" style="width:9px;height:9px;border-radius:50%;background:#8FA6B8;display:inline-block"></span>Python</span>
+        <span>PyTorch · Ray RLlib</span>
+        <span style="color:var(--accent)">● 31 tests green</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" data-screen-label="Contact" style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,5vw,48px) clamp(40px,5vw,64px);scroll-margin-top:80px">
+  <div data-reveal="true" style="position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--line)">
+    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&amp;fit=crop&amp;w=2000&amp;q=80" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(0.65) brightness(0.55)">
+    <div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 90% at 50% 50%, rgba(14,16,14,0.35), rgba(14,16,14,0.78))"></div>
+    <div style="position:relative;text-align:center;padding:clamp(72px,9vw,130px) clamp(24px,5vw,64px);display:flex;flex-direction:column;align-items:center">
+      <img src="assets/portrait.jpg" alt="Portrait of Mani Chandan Mathi" style="width:88px;height:88px;border-radius:50%;object-fit:cover;border:2px solid rgba(232,230,222,0.4);margin-bottom:28px;filter:saturate(0.85)">
+      <h2 style="font-size:clamp(38px,5.4vw,72px);font-weight:500;letter-spacing:-0.035em;margin:0 0 22px;line-height:1.05;text-wrap:balance;text-shadow:0 2px 30px rgba(0,0,0,0.4)">Let's build what's <em style="font-family:'Instrument Serif',serif;font-weight:400">next</em></h2>
+      <p style="font-size:16.5px;color:rgba(232,230,222,0.85);max-width:48ch;line-height:1.65;margin:0 0 40px;text-wrap:pretty">Open to AI and robotics working-student positions, internships, and research collaborations. Based in Bavaria — thinking globally.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+        <a href="mailto:mathimanichandan@gmail.com" data-magnetic="true" style="background:#EDEBE3;color:#141613;text-decoration:none;font-weight:600;font-size:15px;padding:15px 32px;border-radius:999px;transition:box-shadow .3s" style-hover="box-shadow:0 6px 36px rgba(237,235,227,0.35)">Email me</a>
+        <a href="resume.pdf" download="Mani-Chandan-Mathi-Resume.pdf" data-magnetic="true" style="color:var(--ink);text-decoration:none;font-weight:500;font-size:15px;padding:15px 32px;border-radius:999px;background:rgba(232,230,222,0.12);border:1px solid rgba(232,230,222,0.2);backdrop-filter:blur(10px);transition:background .3s" style-hover="background:rgba(232,230,222,0.2)">Download resume</a>
+      </div>
+      <p style="font-size:12.5px;color:rgba(232,230,222,0.6);margin:26px 0 0">Replies within a day · mathimanichandan@gmail.com</p>
+    </div>
+  </div>
+
+  <footer style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:clamp(28px,4vw,56px);padding:clamp(56px,7vw,88px) clamp(4px,1vw,12px) 8px">
+    <div style="grid-column:span 1;max-width:280px">
+      <p style="font-family:'Instrument Serif',serif;font-style:italic;font-size:24px;margin:0 0 14px">mathi</p>
+      <p style="font-size:14px;color:var(--faint);line-height:1.7;margin:0">Teaching machines to see, decide, and cooperate — steadily, quietly, always there.</p>
+    </div>
+    <div>
+      <p style="font-size:11.5px;letter-spacing:0.2em;color:var(--faint);margin:0 0 18px">WORK</p>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <a href="swarm-sar.html" style="font-size:14.5px;color:var(--muted);text-decoration:none" style-hover="color:var(--ink)">Swarm-SAR</a>
+        <a href="autonomous-driving.html" style="font-size:14.5px;color:var(--muted);text-decoration:none" style-hover="color:var(--ink)">Autonomous Driving</a>
+        <a href="sign-language.html" style="font-size:14.5px;color:var(--muted);text-decoration:none" style-hover="color:var(--ink)">Sign Language Recognition</a>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:11.5px;letter-spacing:0.2em;color:var(--faint);margin:0 0 18px">ELSEWHERE</p>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <a href="https://github.com/mathi0405" target="_blank" rel="noopener" style="font-size:14.5px;color:var(--muted);text-decoration:none" style-hover="color:var(--ink)">GitHub</a>
+        <a href="https://www.linkedin.com/in/mani-chandan-mathi/" target="_blank" rel="noopener" style="font-size:14.5px;color:var(--muted);text-decoration:none" style-hover="color:var(--ink)">LinkedIn</a>
+        <a href="https://www.academia.edu/169339715/Enhanced_Communication_Through_Isolated_Sign_Language" target="_blank" rel="noopener" style="font-size:14.5px;color:var(--muted);text-decoration:none" style-hover="color:var(--ink)">IEEE Publication</a>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:11.5px;letter-spacing:0.2em;color:var(--faint);margin:0 0 18px">CONTACT</p>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <a href="mailto:mathimanichandan@gmail.com" style="font-size:14.5px;color:var(--muted);text-decoration:none" style-hover="color:var(--ink)">mathimanichandan@gmail.com</a>
+        <a href="resume.pdf" download="Mani-Chandan-Mathi-Resume.pdf" style="font-size:14.5px;color:var(--muted);text-decoration:none" style-hover="color:var(--ink)">Resume (PDF)</a>
+        <span style="font-size:14.5px;color:var(--faint)">Cham, Bavaria · Germany</span>
+      </div>
+    </div>
+  </footer>
+  <p style="font-size:12px;color:rgba(232,230,222,0.32);margin:0;padding:20px 4px 12px;border-top:1px solid var(--line)">© {{ year }} Mani Chandan Mathi — designed &amp; built with intent</p>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#A9BCA4&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#A9BCA4&quot;,&quot;#C9B896&quot;,&quot;#8FA6B8&quot;,&quot;#EDEBE3&quot;],&quot;section&quot;:&quot;Theme&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;full&quot;,&quot;options&quot;:[&quot;full&quot;,&quot;off&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.skillsCanvasRef = React.createRef();
+    this.skillsWrapRef = React.createRef();
+    this.activeSkill = -1;
+    this.cleanups = [];
+    this.buildGraph();
+  }
+
+  accent() { return this.props.accentColor ?? '#A9BCA4'; }
+  motion() { return this.props.motion ?? 'full'; }
+
+  hexRgb(hex) {
+    const h = hex.replace('#', '');
+    return [parseInt(h.slice(0,2),16), parseInt(h.slice(2,4),16), parseInt(h.slice(4,6),16)];
+  }
+
+  buildGraph() {
+    const clusters = [
+      { label: 'LANGUAGES', x: 15, y: 24, nodes: ['Python', 'C++', 'MATLAB'] },
+      { label: 'REINFORCEMENT LEARNING', x: 50, y: 26, nodes: ['Multi-Agent PPO', 'SAC', 'CTDE', 'Gymnasium', 'PettingZoo', 'Stable-Baselines3', 'Ray RLlib', 'Reward Shaping'] },
+      { label: 'PERCEPTION & ML', x: 84, y: 28, nodes: ['PyTorch', 'TensorFlow', 'OpenCV', 'Computer Vision', 'Deep Learning', 'PyTorch Geometric', 'scikit-learn', 'NumPy'] },
+      { label: 'ROBOTICS & SIMULATION', x: 28, y: 72, nodes: ['ROS 2', 'CARLA', 'AirSim', 'Gazebo', 'Motion Planning', 'Machine Vision'] },
+      { label: 'ENGINEERING', x: 73, y: 74, nodes: ['Docker', 'Git', 'GitHub Actions', 'Linux', 'Streamlit', 'UiPath'] }
+    ];
+    const nodes = [];
+    const edges = [];
+    this.hubs = clusters.map(c => ({ label: c.label, x: c.x, y: c.y }));
+    clusters.forEach((c, ci) => {
+      const n = c.nodes.length;
+      c.nodes.forEach((label, i) => {
+        const angle = (i / n) * Math.PI * 2 + ci * 0.9;
+        const rx = n <= 3 ? 8 : 13.5;
+        const ry = n <= 3 ? 9 : 15;
+        const x = Math.min(93, Math.max(7, c.x + Math.cos(angle) * rx));
+        const y = Math.min(92, Math.max(9, c.y + Math.sin(angle) * ry));
+        const idx = nodes.length;
+        nodes.push({ label, x: +x.toFixed(2), y: +y.toFixed(2), cluster: ci });
+        edges.push({ a: idx, hub: ci });
+      });
+    });
+    const cross = [
+      ['Python', 'PyTorch'], ['Python', 'ROS 2'], ['Python', 'TensorFlow'],
+      ['PyTorch', 'Multi-Agent PPO'], ['PyTorch Geometric', 'CTDE'],
+      ['Stable-Baselines3', 'SAC'], ['CARLA', 'Stable-Baselines3'],
+      ['OpenCV', 'CARLA'], ['ROS 2', 'Docker'], ['AirSim', 'Ray RLlib'],
+      ['Machine Vision', 'Computer Vision'], ['GitHub Actions', 'Git']
+    ];
+    const byLabel = {};
+    nodes.forEach((nd, i) => { byLabel[nd.label] = i; });
+    this.crossEdges = cross
+      .filter(([a, b]) => byLabel[a] !== undefined && byLabel[b] !== undefined)
+      .map(([a, b]) => ({ a: byLabel[a], b: byLabel[b] }));
+    this.hubEdges = edges;
+    this.graphNodes = nodes;
+  }
+
+  componentDidMount() {
+    this.applyAccent();
+    this.initSkills();
+    this.initReveal();
+    this.initMagnetic();
+    this.onVis = () => { this.pageHidden = document.hidden; };
+    document.addEventListener('visibilitychange', this.onVis);
+    this.cleanups.push(() => document.removeEventListener('visibilitychange', this.onVis));
+  }
+
+  componentDidUpdate() { this.applyAccent(); }
+  componentWillUnmount() { this.cleanups.forEach(fn => { try { fn(); } catch (e) {} }); }
+
+  applyAccent() { document.body.style.setProperty('--accent', this.accent()); }
+
+  initSkills() {
+    const canvas = this.skillsCanvasRef.current;
+    const wrap = this.skillsWrapRef.current;
+    if (!canvas || !wrap) return;
+    const ctx = canvas.getContext('2d');
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let w = 0, h = 0, visible = false, raf = 0, t = 0;
+
+    const resize = () => {
+      const rect = wrap.getBoundingClientRect();
+      w = rect.width; h = rect.height;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    resize();
+    const ro = new ResizeObserver(resize);
+    ro.observe(wrap);
+    this.cleanups.push(() => ro.disconnect());
+
+    const io = new IntersectionObserver(([en]) => { visible = en.isIntersecting; });
+    io.observe(wrap);
+    this.cleanups.push(() => io.disconnect());
+
+    const px = (n) => ({ x: n.x / 100 * w, y: n.y / 100 * h });
+
+    const draw = () => {
+      raf = requestAnimationFrame(draw);
+      if (!visible || this.pageHidden) return;
+      t += 0.008;
+      ctx.clearRect(0, 0, w, h);
+      const [ar, ag, ab] = this.hexRgb(this.accent());
+      const active = this.activeSkill;
+      for (const e of this.hubEdges) {
+        const n = this.graphNodes[e.a];
+        const hub = this.hubs[e.hub];
+        const p1 = px(n), p2 = { x: hub.x / 100 * w, y: hub.y / 100 * h };
+        const isActive = active === e.a;
+        const breathe = 0.06 + 0.03 * Math.sin(t * 2 + e.a);
+        ctx.strokeStyle = isActive
+          ? `rgba(${ar},${ag},${ab},0.9)`
+          : (active >= 0 ? `rgba(232,230,222,0.03)` : `rgba(232,230,222,${breathe.toFixed(3)})`);
+        ctx.lineWidth = isActive ? 1.5 : 1;
+        ctx.beginPath(); ctx.moveTo(p1.x, p1.y); ctx.lineTo(p2.x, p2.y); ctx.stroke();
+      }
+      for (const e of this.crossEdges) {
+        const p1 = px(this.graphNodes[e.a]), p2 = px(this.graphNodes[e.b]);
+        const isActive = active === e.a || active === e.b;
+        ctx.strokeStyle = isActive
+          ? `rgba(${ar},${ag},${ab},0.95)`
+          : (active >= 0 ? 'rgba(232,230,222,0.03)' : `rgba(${ar},${ag},${ab},${(0.14 + 0.07 * Math.sin(t * 1.5 + e.a)).toFixed(3)})`);
+        ctx.lineWidth = isActive ? 1.5 : 1;
+        ctx.setLineDash(isActive ? [] : [3, 5]);
+        ctx.beginPath(); ctx.moveTo(p1.x, p1.y); ctx.lineTo(p2.x, p2.y); ctx.stroke();
+        ctx.setLineDash([]);
+      }
+      for (const hub of this.hubs) {
+        const hx = hub.x / 100 * w, hy = hub.y / 100 * h;
+        ctx.beginPath(); ctx.arc(hx, hy, 3, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${ar},${ag},${ab},0.75)`; ctx.fill();
+        ctx.beginPath(); ctx.arc(hx, hy, 8 + 2 * Math.sin(t * 2), 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(${ar},${ag},${ab},0.28)`; ctx.lineWidth = 1; ctx.stroke();
+      }
+    };
+    raf = requestAnimationFrame(draw);
+    this.cleanups.push(() => cancelAnimationFrame(raf));
+  }
+
+  initReveal() {
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    if (this.motion() === 'off') {
+      els.forEach(el => el.querySelectorAll('[data-count]').forEach(c => { c.textContent = c.getAttribute('data-count'); }));
+      return;
+    }
+    const vh = window.innerHeight;
+    const io = new IntersectionObserver((entries) => {
+      for (const en of entries) {
+        if (en.isIntersecting) {
+          en.target.style.opacity = '1';
+          en.target.style.transform = 'translateY(0)';
+          io.unobserve(en.target);
+          en.target.querySelectorAll('[data-count]').forEach(el => this.runCounter(el));
+        }
+      }
+    }, { threshold: 0.12 });
+    els.forEach(el => {
+      if (el.getBoundingClientRect().top > vh * 0.85) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(28px)';
+        el.style.transition = 'opacity .85s cubic-bezier(.16,1,.3,1), transform .85s cubic-bezier(.16,1,.3,1)';
+      }
+      io.observe(el);
+    });
+    // hero counters are visible immediately
+    document.querySelectorAll('header [data-count]').forEach(el => this.runCounter(el));
+    this.cleanups.push(() => io.disconnect());
+  }
+
+  runCounter(el) {
+    const target = parseInt(el.getAttribute('data-count'), 10);
+    if (isNaN(target) || el.__counted) return;
+    el.__counted = true;
+    const t0 = performance.now(), dur = 1300;
+    const step = (now) => {
+      const p = Math.min(1, (now - t0) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = String(Math.round(target * eased));
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  initMagnetic() {
+    if (this.motion() === 'off') return;
+    const els = Array.from(document.querySelectorAll('[data-magnetic]'));
+    els.forEach(el => {
+      const move = (e) => {
+        const r = el.getBoundingClientRect();
+        const dx = (e.clientX - r.left - r.width / 2) / r.width;
+        const dy = (e.clientY - r.top - r.height / 2) / r.height;
+        el.style.transform = `translate(${(dx * 6).toFixed(1)}px, ${(dy * 6).toFixed(1)}px)`;
+      };
+      const leave = () => { el.style.transform = 'translate(0,0)'; };
+      el.addEventListener('mousemove', move);
+      el.addEventListener('mouseleave', leave);
+      this.cleanups.push(() => { el.removeEventListener('mousemove', move); el.removeEventListener('mouseleave', leave); });
+    });
+  }
+
+  renderVals() {
+    const nodes = this.graphNodes.map((n, i) => ({
+      label: n.label, x: n.x, y: n.y,
+      enter: () => { this.activeSkill = i; },
+      leave: () => { this.activeSkill = -1; }
+    }));
+    return {
+      skillsCanvasRef: this.skillsCanvasRef,
+      skillsWrapRef: this.skillsWrapRef,
+      skillNodes: nodes,
+      clusterHubs: this.hubs,
+      year: 2026
+    };
+  }
+}
+</script>
+</body>
+</html>
