@@ -106,16 +106,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       </div>
       <div style="display:flex;flex-direction:column;gap:14px;justify-content:center">
         <div style="background:rgba(20,22,19,0.62);border:1px solid rgba(232,230,222,0.14);border-radius:18px;padding:22px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)">
-          <p style="font-size:11px;letter-spacing:0.2em;color:rgba(232,230,222,0.55);margin:0 0 16px">SWARM INTELLIGENCE SCORE · LAST BENCHMARK</p>
+          <p style="font-size:11px;letter-spacing:0.2em;color:rgba(232,230,222,0.55);margin:0 0 16px">MEAN RESCUED /8 · HEURISTIC · 20 MAPS</p>
           <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:16px">
-            <span style="font-size:44px;font-weight:500;letter-spacing:-0.03em;color:rgba(232,230,222,0.45);line-height:1">25</span>
+            <span style="font-size:44px;font-weight:500;letter-spacing:-0.03em;color:rgba(232,230,222,0.45);line-height:1">6.75</span>
             <span aria-hidden="true" style="font-size:24px;color:var(--accent)">→</span>
-            <span style="font-size:44px;font-weight:500;letter-spacing:-0.03em;line-height:1">72</span>
-            <span style="font-size:12.5px;color:var(--accent);margin-left:auto">comms enabled</span>
+            <span style="font-size:44px;font-weight:500;letter-spacing:-0.03em;line-height:1">6.35</span>
+            <span style="font-size:12.5px;color:var(--accent);margin-left:auto">disabled / 0% loss</span>
           </div>
           <div style="display:flex;flex-direction:column;gap:8px" aria-hidden="true">
-            <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11px;color:rgba(232,230,222,0.5);width:80px;flex:none">COMMS OFF</span><span style="height:8px;border-radius:4px;background:rgba(232,230,222,0.2);width:25%"></span></div>
-            <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11px;color:rgba(232,230,222,0.5);width:80px;flex:none">COMMS ON</span><span style="height:8px;border-radius:4px;background:var(--accent);width:72%"></span></div>
+            <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11px;color:rgba(232,230,222,0.5);width:80px;flex:none">COMMS OFF</span><span style="height:8px;border-radius:4px;background:rgba(232,230,222,0.2);width:84.4%"></span></div>
+            <div style="display:flex;align-items:center;gap:10px"><span style="font-size:11px;color:rgba(232,230,222,0.5);width:80px;flex:none">COMMS ON</span><span style="height:8px;border-radius:4px;background:var(--accent);width:79.4%"></span></div>
           </div>
         </div>
         <div style="background:rgba(20,22,19,0.62);border:1px solid rgba(232,230,222,0.14);border-radius:18px;padding:14px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)">
@@ -129,7 +129,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr));gap:24px">
     <article data-reveal="true" style="border:1px solid var(--line);border-radius:24px;background:var(--card);padding:clamp(28px,3.5vw,44px);display:flex;flex-direction:column;gap:20px;transition:border-color .35s" style-hover="border-color:rgba(232,230,222,0.24)">
       <span style="font-size:11.5px;letter-spacing:0.18em;color:rgba(232,230,222,0.65);border:1px solid rgba(232,230,222,0.14);padding:6px 14px;border-radius:999px;align-self:flex-start;white-space:nowrap">OPEN SOURCE · 2025</span>
-      <h3 style="font-size:clamp(26px,2.8vw,36px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.1">Autonomous driving, from <em style="font-family:'Instrument Serif',serif;font-weight:400">pixels</em></h3>
+      <h3 style="font-size:clamp(26px,2.8vw,36px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.1">Autonomous driving, evaluated in <em style="font-family:'Instrument Serif',serif;font-weight:400">simulation</em></h3>
       <p style="font-size:15.5px;line-height:1.7;color:var(--muted);margin:0">PPO and SAC compared with PID and Stanley controllers. The checked-in evaluation reports 95% PPO success across 20 episodes in the lightweight fallback environment with state observations; CARLA integration is a separate backend.</p>
       <div style="border:1px solid var(--line);border-radius:14px;overflow:hidden;font-family:'JetBrains Mono',monospace;font-size:12px">
         <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;background:rgba(232,230,222,0.05);padding:10px 16px;color:var(--faint);letter-spacing:0.08em;font-size:10.5px;gap:8px"><span>AGENT</span><span>SUCCESS</span><span>COLLISION</span></div>
@@ -210,7 +210,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
             <span style="font-size:13px;color:var(--faint);white-space:nowrap">2026</span>
           </div>
           <p style="font-size:12.5px;letter-spacing:0.12em;color:var(--muted);margin:0 0 10px"><span aria-hidden="true" style="display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:8px;animation:blink 1.6s infinite"></span>IEEE FORMAT · IN PREPARATION</p>
-          <p style="font-size:14.5px;color:var(--muted);line-height:1.65;margin:0;max-width:56ch">Introduces the Swarm Intelligence Score and shows communication quality — not raw exploration — is the main bottleneck in coordinated rescue.</p>
+          <p style="font-size:14.5px;color:var(--muted);line-height:1.65;margin:0;max-width:56ch">Studies cooperative rescue and asks whether learned policies use message content effectively; historical checkpoint comparisons remain under reconciliation.</p>
         </div>
       </div>
     </div>
@@ -241,11 +241,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
         <p style="font-family:'JetBrains Mono',monospace;font-size:14.5px;font-weight:500;color:var(--ink);margin:0;overflow-wrap:anywhere">mathi0405/<span style="color:var(--accent)">Swarm-SAR</span></p>
         <span style="font-size:10.5px;letter-spacing:0.12em;color:#141613;background:var(--accent);border-radius:999px;padding:4px 12px;font-weight:600;white-space:nowrap">IN DEVELOPMENT</span>
       </div>
-      <p style="font-size:14.5px;color:var(--muted);line-height:1.65;margin:0">~73 modules, ~4,900 LOC, 31 unit tests, Dockerized, Streamlit dashboard, 20+ publication figures. Repository opens with the paper release.</p>
+      <p style="font-size:14.5px;color:var(--muted);line-height:1.65;margin:0">Public simulation code, raw results, Docker configuration and a Streamlit dashboard. Latest local verification: 102 tests passed; 2 optional export tests skipped without PyTorch.</p>
       <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:var(--faint);margin-top:auto">
         <span style="display:flex;align-items:center;gap:7px"><span aria-hidden="true" style="width:9px;height:9px;border-radius:50%;background:#8FA6B8;display:inline-block"></span>Python</span>
         <span>PyTorch · Ray RLlib</span>
-        <span style="color:var(--accent)">● 31 tests green</span>
+        <span style="color:var(--accent)">● 102 tests passed · 2 skipped</span>
       </div>
     </div>
   </div>
