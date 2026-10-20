@@ -140,31 +140,11 @@ Swarm-SAR: 60 heuristic simulation episodes across 20 map seeds and three commun
     </div>
   </section>
 
-  <section data-screen-label="Key Result" style="padding:clamp(64px,8vw,110px) 0;border-bottom:1px solid var(--line)">
-    <div data-reveal="true" style="margin-bottom:clamp(36px,5vw,56px)">
-      <p style="font-size:12px;letter-spacing:0.24em;color:var(--accent);margin:0 0 18px">04 · KEY RESULT</p>
-      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.12;max-width:26ch;text-wrap:balance">Coordination — not exploration — is the <em style="font-family:'Instrument Serif',serif;font-weight:400">bottleneck</em>.</h2>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(28px,4vw,56px);align-items:start">
-      <div data-reveal="true" style="border:1px solid var(--line);border-radius:20px;padding:clamp(28px,4vw,44px);background:linear-gradient(160deg, rgba(169,188,164,0.08), var(--card))">
-        <p style="font-size:11px;letter-spacing:0.2em;color:var(--faint);margin:0 0 20px">SWARM INTELLIGENCE SCORE · BENCHMARK RUNS</p>
-        <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:24px">
-          <span style="font-size:clamp(56px,7vw,84px);font-weight:500;letter-spacing:-0.04em;line-height:1;color:rgba(232,230,222,0.4)">25</span>
-          <span aria-hidden="true" style="font-size:clamp(32px,4vw,44px);color:var(--accent)">→</span>
-          <span style="font-size:clamp(56px,7vw,84px);font-weight:500;letter-spacing:-0.04em;line-height:1">72</span>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px" aria-hidden="true">
-          <div style="display:flex;align-items:center;gap:12px"><span style="font-size:10.5px;color:var(--faint);width:92px;flex:none">COMMS OFF</span><span style="height:10px;border-radius:5px;background:rgba(232,230,222,0.18);width:25%"></span></div>
-          <div style="display:flex;align-items:center;gap:12px"><span style="font-size:10.5px;color:var(--faint);width:92px;flex:none">COMMS ON</span><span style="height:10px;border-radius:5px;background:var(--accent);width:72%"></span></div>
-        </div>
-        <p style="font-size:14px;color:var(--faint);line-height:1.7;margin:0">Composite score across coverage, rescue, energy, comms, and safety. Measured with the heuristic coordination stack on the frozen benchmark suite.</p>
-      </div>
-      <div data-reveal="true" style="font-size:16.5px;line-height:1.75;color:var(--muted)">
-        <p style="margin:0 0 18px">Enabling inter-drone communication nearly <strong style="color:var(--ink);font-weight:600">tripled the composite coordination score (SIS 25 → 72)</strong> even when raw area coverage was unchanged — evidence that coordination, not exploration, limits cooperative SAR.</p>
-        <p style="margin:0 0 18px">The privileged oracle rescued the most victims yet <strong style="color:var(--ink);font-weight:600">scored lower overall</strong>, sacrificing coverage and communication — confirming the metric captures real operational trade-offs rather than rewarding a single objective.</p>
-        <p style="margin:0;font-size:14px;color:var(--faint);border-left:2px solid rgba(169,188,164,0.5);padding-left:16px;line-height:1.7">The MARL policy (Transformer + GNN, CTDE-MAPPO) is designed and implemented; the numbers above are measured from the baseline and heuristic evaluations. Full learned-policy results ship with the paper.</p>
-      </div>
-    </div>
+  <section data-screen-label="Measured reference" style="padding:64px 0;border-bottom:1px solid var(--line)">
+    <h2>Communication needs a controlled evaluation.</h2>
+    <p style="line-height:1.8;color:var(--muted)">In the 20 October 2026 heuristic reference run, mean rescues were 6.35/8 at 0% packet loss, 6.00/8 at 30% loss, and 6.75/8 with communication disabled (20 maps per condition). The disabled condition also changes radio range and peer visibility; this does not establish a causal communication effect. These are self-contained simulation results, not learned-policy or hardware validation.</p>
+    <p style="line-height:1.8;color:var(--muted)">The previous SIS 25-to-72 comparison used a retired activity-based metric and has been removed. The next research milestone is to isolate message content in frozen learned policies and reconcile historical checkpoint evaluations.</p>
+    <a href="https://github.com/mathi0405/drone-swarm-sar/tree/main/results/portfolio_audit_20261020">Report, raw metrics and comparison video</a>
   </section>
 
   <section data-screen-label="Engineering" style="padding:clamp(64px,8vw,110px) 0;border-bottom:1px solid var(--line)">
