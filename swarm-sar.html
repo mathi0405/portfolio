@@ -54,6 +54,12 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
 </div>
 
 <main style="max-width:1140px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+<aside aria-label="Latest measured experiment" style="margin:24px auto;padding:20px;max-width:1100px;border:1px solid #718a73;border-radius:12px;line-height:1.65">
+<strong>Latest measured experiment — 20 October 2026</strong><br>
+Swarm-SAR: 60 heuristic simulation episodes across 20 map seeds and three communication conditions. Mean rescues: 6.35/8 at 0% packet loss, 6.00/8 at 30% loss, and 6.75/8 with communication disabled. This is a scripted baseline, not a learned-policy or hardware result. The disabled condition also changes radio range; no causal superiority claim is made.<br>
+<a href="https://github.com/mathi0405/drone-swarm-sar/tree/main/results/portfolio_audit_20261020">Read the reproducible report, raw results and labeled comparison video</a>.
+</aside>
+
 
   <section data-screen-label="Problem" style="padding:clamp(64px,8vw,110px) 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(28px,4vw,64px)">
     <div data-reveal="true">
@@ -98,7 +104,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
   <section data-screen-label="Architecture" style="padding:clamp(64px,8vw,110px) 0;border-bottom:1px solid var(--line)">
     <div data-reveal="true" style="margin-bottom:clamp(36px,5vw,56px)">
       <p style="font-size:12px;letter-spacing:0.24em;color:var(--accent);margin:0 0 18px">03 · ARCHITECTURE</p>
-      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.1">From noisy pixels to <em style="font-family:'Instrument Serif',serif;font-weight:400">coordinated</em> action.</h2>
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.1">From simulated observations to <em style="font-family:'Instrument Serif',serif;font-weight:400">coordinated</em> action.</h2>
     </div>
     <div data-reveal="true" style="border:1px solid var(--line);border-radius:20px;background:#131512;padding:clamp(24px,4vw,48px);overflow-x:auto">
       <div style="display:flex;align-items:stretch;gap:14px;min-width:820px">
