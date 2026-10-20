@@ -9,7 +9,7 @@
 <x-dc>
 <helmet>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Autonomous driving via deep reinforcement learning — PPO and SAC benchmarked against PID and Stanley controllers in CARLA.">
+<meta name="description" content="Autonomous driving research framework with CARLA integration and a documented fallback/state evaluation of PPO, SAC, PID and Stanley controllers.">
 <title>Autonomous Driving via Deep RL — Mani Chandan Mathi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +39,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
       <a href="https://github.com/mathi0405/Autonomous-driving" target="_blank" rel="noopener" style="font-size:11.5px;letter-spacing:0.14em;color:rgba(232,230,222,0.75);text-decoration:none" style-hover="color:var(--ink)">github.com/mathi0405/Autonomous-driving ↗</a>
     </div>
     <h1 style="font-size:clamp(40px,6vw,80px);font-weight:500;letter-spacing:-0.035em;line-height:1.04;margin:0 0 22px;max-width:18ch;text-wrap:balance;text-shadow:0 2px 36px rgba(0,0,0,0.4)">Driving from <em style="font-family:'Instrument Serif',serif;font-weight:400">pixels</em> alone</h1>
-    <p style="font-size:clamp(17px,2vw,22px);color:rgba(232,230,222,0.82);line-height:1.55;margin:0;max-width:48ch;text-wrap:pretty">Can an agent trained entirely in simulation, seeing only camera pixels, match hand-engineered controllers? A rigorous head-to-head in CARLA.</p>
+    <p style="font-size:clamp(17px,2vw,22px);color:rgba(232,230,222,0.82);line-height:1.55;margin:0;max-width:48ch;text-wrap:pretty">How do learned policies compare with classical controllers? A dual-backend research framework with a documented fallback/state benchmark and separate CARLA integration.</p>
   </div>
 </header>
 
@@ -81,7 +81,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
         <div style="flex:1;border:1px solid rgba(232,230,222,0.14);border-radius:14px;padding:18px;background:#181b17"><p style="font-size:10px;letter-spacing:0.18em;color:var(--faint);margin:0 0 8px">PIPELINE</p><p style="font-size:14px;font-weight:600;margin:0 0 8px">Train → checkpoint → eval</p><p style="font-size:12px;color:var(--faint);margin:0;line-height:1.7">automated evaluation<br>+ HTML dashboard</p></div>
       </div>
     </div>
-    <p data-reveal="true" style="font-size:15px;color:var(--muted);line-height:1.7;margin:0;max-width:72ch">A lightweight CPU-only kinematic simulator mirrors CARLA's observation space, action space, and reward function exactly — so unit tests and CI smoke runs execute in seconds, and policies transfer between backends without modification.</p>
+    <p data-reveal="true" style="font-size:15px;color:var(--muted);line-height:1.7;margin:0;max-width:72ch">A lightweight CPU-only kinematic simulator supports development and CI alongside the CARLA adapter. A shared software interface does not demonstrate successful policy transfer; evaluate each backend separately.</p>
   </section>
 
   <section data-screen-label="Reward Design" style="padding:clamp(64px,8vw,110px) 0;border-bottom:1px solid var(--line)">
@@ -111,19 +111,19 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius
   <section data-screen-label="Results" style="padding:clamp(64px,8vw,110px) 0;border-bottom:1px solid var(--line)">
     <div data-reveal="true" style="margin-bottom:clamp(36px,5vw,56px)">
       <p style="font-size:12px;letter-spacing:0.24em;color:var(--accent);margin:0 0 18px">04 · RESULTS</p>
-      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.12;max-width:28ch;text-wrap:balance">95% success — from pixels, <em style="font-family:'Instrument Serif',serif;font-weight:400">without privilege</em>.</h2>
+      <h2 style="font-size:clamp(28px,3.6vw,44px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.12;max-width:28ch;text-wrap:balance">95% success — in fallback simulation, <em style="font-family:'Instrument Serif',serif;font-weight:400">with state observations</em>.</h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:clamp(28px,4vw,56px);align-items:start">
       <div data-reveal="true" style="border:1px solid var(--line);border-radius:16px;overflow:hidden;font-family:'JetBrains Mono',monospace;font-size:13px">
-        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;background:rgba(232,230,222,0.05);padding:12px 20px;color:var(--faint);letter-spacing:0.08em;font-size:10.5px;gap:8px"><span>AGENT · 20 EPISODES</span><span>SUCCESS</span><span>ROUTE</span><span>COLLISION</span></div>
-        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;padding:13px 20px;border-top:1px solid var(--line);gap:8px;background:rgba(169,188,164,0.09)"><span style="color:var(--accent);font-weight:500">PPO (pixels)</span><span>95%</span><span>98%</span><span>0.05</span></div>
-        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;padding:13px 20px;border-top:1px solid var(--line);gap:8px;color:var(--muted)"><span>SAC (pixels)</span><span>85%</span><span>89%</span><span>0.15</span></div>
-        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;padding:13px 20px;border-top:1px solid var(--line);gap:8px;color:var(--faint)"><span>PID (privileged)</span><span>100%</span><span>99%</span><span>0.00</span></div>
-        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;padding:13px 20px;border-top:1px solid var(--line);gap:8px;color:var(--faint)"><span>Stanley (privileged)</span><span>100%</span><span>99%</span><span>0.00</span></div>
+        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;background:rgba(232,230,222,0.05);padding:12px 20px;color:var(--faint);letter-spacing:0.08em;font-size:10.5px;gap:8px"><span>FALLBACK · 20 EPISODES</span><span>SUCCESS</span><span>ROUTE</span><span>COLLISION</span></div>
+        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;padding:13px 20px;border-top:1px solid var(--line);gap:8px;background:rgba(169,188,164,0.09)"><span style="color:var(--accent);font-weight:500">PPO (state)</span><span>95%</span><span>98%</span><span>0.05</span></div>
+        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;padding:13px 20px;border-top:1px solid var(--line);gap:8px;color:var(--muted)"><span>SAC (state)</span><span>85%</span><span>89%</span><span>0.15</span></div>
+        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;padding:13px 20px;border-top:1px solid var(--line);gap:8px;color:var(--faint)"><span>PID (state)</span><span>100%</span><span>99%</span><span>0.00</span></div>
+        <div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;padding:13px 20px;border-top:1px solid var(--line);gap:8px;color:var(--faint)"><span>Stanley (state)</span><span>100%</span><span>99%</span><span>0.00</span></div>
       </div>
       <div data-reveal="true" style="font-size:16.5px;line-height:1.75;color:var(--muted)">
-        <p style="margin:0 0 18px">PPO approaches classical-controller success rates <strong style="color:var(--ink);font-weight:600">while operating exclusively from image observations</strong> — no map, no privileged state. SAC converges but with higher variance, consistent with off-policy distribution shift in a partially observable setting.</p>
-        <p style="margin:0">The classical controllers' edge on structured tracks is expected — and expected to invert in unstructured or sensor-degraded scenarios, where learned generalization becomes the differentiator.</p>
+        <p style="margin:0 0 18px">The checked-in results use <strong style="color:var(--ink);font-weight:600">state observations in the lightweight fallback environment</strong>. PPO succeeds in 19 of 20 episodes; SAC succeeds in 17. These numbers do not establish camera-only CARLA performance.</p>
+        <p style="margin:0">Both classical baselines achieve 20/20 successes in this configuration. Performance in CARLA, on unseen routes, or under sensor degradation requires separate evaluation.</p>
       </div>
     </div>
   </section>
