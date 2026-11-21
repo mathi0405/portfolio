@@ -79,7 +79,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 <aside aria-label="Latest experiment" style="max-width:1100px;margin:32px auto;padding:24px;border:1px solid #718a73;border-radius:14px;line-height:1.7"><strong>Latest: a reproducible Swarm-SAR reference</strong><p>60 heuristic simulation episodes across 20 maps. Mean rescued: 6.35/8 at 0% packet loss, 6.00/8 at 30%, and 6.75/8 with communication disabled. The disabled condition also changes peer visibility; no causal superiority claim is made.</p><a href="https://github.com/mathi0405/drone-swarm-sar/tree/main/results/portfolio_audit_20261020">Report, raw results and labeled comparison video</a></aside><!-- ============ WORK ============ -->
 <section id="work" data-screen-label="Featured Projects" style="max-width:1240px;margin:0 auto;padding:clamp(90px,10vw,150px) clamp(20px,5vw,48px) 40px;scroll-margin-top:80px">
   <div data-reveal="true" style="text-align:center;max-width:760px;margin:0 auto clamp(52px,6vw,84px)">
-    <h2 style="font-size:clamp(36px,4.8vw,62px);font-weight:500;letter-spacing:-0.03em;margin:0 0 20px;line-height:1.08;text-wrap:balance">Three projects. <em style="font-family:'Instrument Serif',serif;font-weight:400">Complete</em> stories.</h2>
+    <h2 style="font-size:clamp(36px,4.8vw,62px);font-weight:500;letter-spacing:-0.03em;margin:0 0 20px;line-height:1.08;text-wrap:balance">Four projects. <em style="font-family:'Instrument Serif',serif;font-weight:400">Complete</em> stories.</h2>
     <p style="font-size:16.5px;color:var(--muted);line-height:1.65;margin:0;text-wrap:pretty">Every project runs the full arc — problem, method, evidence — built to remove doubt, not add to it.</p>
   </div>
 
@@ -128,14 +128,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   <!-- Projects 2 + 3 -->
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr));gap:24px">
     <article data-reveal="true" style="border:1px solid var(--line);border-radius:24px;background:var(--card);padding:clamp(28px,3.5vw,44px);display:flex;flex-direction:column;gap:20px;transition:border-color .35s" style-hover="border-color:rgba(232,230,222,0.24)">
-      <span style="font-size:11.5px;letter-spacing:0.18em;color:rgba(232,230,222,0.65);border:1px solid rgba(232,230,222,0.14);padding:6px 14px;border-radius:999px;align-self:flex-start;white-space:nowrap">OPEN SOURCE · 2025</span>
+      <span style="font-size:11.5px;letter-spacing:0.18em;color:rgba(232,230,222,0.65);border:1px solid rgba(232,230,222,0.14);padding:6px 14px;border-radius:999px;align-self:flex-start;white-space:nowrap">OPEN SOURCE · 2026</span>
       <h3 style="font-size:clamp(26px,2.8vw,36px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.1">Autonomous driving, evaluated in <em style="font-family:'Instrument Serif',serif;font-weight:400">simulation</em></h3>
-      <p style="font-size:15.5px;line-height:1.7;color:var(--muted);margin:0">PPO and SAC compared with PID and Stanley controllers. The checked-in evaluation reports 95% PPO success across 20 episodes in the lightweight fallback environment with state observations; CARLA integration is a separate backend.</p>
+      <p style="font-size:15.5px;line-height:1.7;color:var(--muted);margin:0">A validation platform for driving controllers: paired CPU-simulation scenarios (nominal, geometry, sensing, actuator faults) with failure replay and explicit release gates. Version 6 completed 501/512 missions vs 492/512 for version 5; the remaining 5 collisions and 6 timeouts keep the release gate closed.</p>
       <div style="border:1px solid var(--line);border-radius:14px;overflow:hidden;font-family:'JetBrains Mono',monospace;font-size:12px">
-        <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;background:rgba(232,230,222,0.05);padding:10px 16px;color:var(--faint);letter-spacing:0.08em;font-size:10.5px;gap:8px"><span>AGENT</span><span>SUCCESS</span><span>COLLISION</span></div>
-        <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;padding:10px 16px;border-top:1px solid var(--line);gap:8px"><span style="color:var(--accent)">PPO</span><span>95%</span><span>0.05</span></div>
-        <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;padding:10px 16px;border-top:1px solid var(--line);gap:8px;color:var(--muted)"><span>SAC</span><span>85%</span><span>0.15</span></div>
-        <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;padding:10px 16px;border-top:1px solid var(--line);gap:8px;color:var(--faint)"><span>PID / Stanley</span><span>100%</span><span>0.00</span></div>
+        <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;background:rgba(232,230,222,0.05);padding:10px 16px;color:var(--faint);letter-spacing:0.08em;font-size:10.5px;gap:8px"><span>VERSION</span><span>COMPLETED</span><span>COLLISIONS</span><span>TIMEOUTS</span></div>
+        <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;padding:10px 16px;border-top:1px solid var(--line);gap:8px"><span style="color:var(--accent)">v6</span><span>501/512</span><span>5</span><span>6</span></div>
+        <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;padding:10px 16px;border-top:1px solid var(--line);gap:8px;color:var(--muted)"><span>v5</span><span>492/512</span><span>–</span><span>–</span></div>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:auto">
         <a href="autonomous-driving.html" data-magnetic="true" style="background:#EDEBE3;color:#141613;text-decoration:none;font-weight:600;font-size:14px;padding:12px 24px;border-radius:999px;transition:box-shadow .3s" style-hover="box-shadow:0 6px 32px rgba(237,235,227,0.3)">Case study</a>
@@ -152,6 +151,21 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:auto">
         <a href="sign-language.html" data-magnetic="true" style="background:#EDEBE3;color:#141613;text-decoration:none;font-weight:600;font-size:14px;padding:12px 24px;border-radius:999px;transition:box-shadow .3s" style-hover="box-shadow:0 6px 32px rgba(237,235,227,0.3)">Case study</a>
         <a href="https://www.academia.edu/169339715/Enhanced_Communication_Through_Isolated_Sign_Language" target="_blank" rel="noopener" data-magnetic="true" style="color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;padding:12px 24px;border-radius:999px;background:rgba(232,230,222,0.07);border:1px solid rgba(232,230,222,0.14);transition:background .3s" style-hover="background:rgba(232,230,222,0.14)">Publication ↗</a>
+      </div>
+    </article>
+    <article data-reveal="true" style="border:1px solid var(--line);border-radius:24px;background:var(--card);padding:clamp(28px,3.5vw,44px);display:flex;flex-direction:column;gap:20px;transition:border-color .35s" style-hover="border-color:rgba(232,230,222,0.24)">
+      <span style="font-size:11.5px;letter-spacing:0.18em;color:rgba(232,230,222,0.65);border:1px solid rgba(232,230,222,0.14);padding:6px 14px;border-radius:999px;align-self:flex-start;white-space:nowrap">OPEN SOURCE · 2026</span>
+      <h3 style="font-size:clamp(26px,2.8vw,36px);font-weight:500;letter-spacing:-0.025em;margin:0;line-height:1.1">TurtleBot navigation, from 2-D to <em style="font-family:'Instrument Serif',serif;font-weight:400">Gazebo</em></h3>
+      <p style="font-size:15.5px;line-height:1.7;color:var(--muted);margin:0">A SAC train-checkpoint-evaluate pipeline with 25 tests, extending open-source TurtleBot3 navigation work. Policies trained on a CPU simulator reached 50/50, 48/50 and 47/50 on a frozen suite; the seed-7 policy then transferred to a ROS1 Noetic Gazebo world with 19/20 successes. CI builds the Gazebo container on every change. Hardware is not yet tested.</p>
+      <div style="border:1px solid var(--line);border-radius:14px;overflow:hidden;font-family:'JetBrains Mono',monospace;font-size:12px">
+        <div style="display:grid;grid-template-columns:1.6fr 1fr;background:rgba(232,230,222,0.05);padding:10px 16px;color:var(--faint);letter-spacing:0.08em;font-size:10.5px;gap:8px"><span>EVALUATION</span><span>SUCCESS</span></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr;padding:10px 16px;border-top:1px solid var(--line);gap:8px"><span style="color:var(--accent)">Gazebo, CPU-trained policy</span><span>19/20</span></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr;padding:10px 16px;border-top:1px solid var(--line);gap:8px;color:var(--muted)"><span>CPU suite, 3 seeds</span><span>50 · 48 · 47 /50</span></div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr;padding:10px 16px;border-top:1px solid var(--line);gap:8px;color:var(--faint)"><span>Gazebo, geometric baseline</span><span>7/20</span></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:auto">
+        <a href="https://github.com/mathi0405/deep_rl_turtlebot_nav/blob/main/docs/GAZEBO_RESULTS.md" target="_blank" rel="noopener" data-magnetic="true" style="background:#EDEBE3;color:#141613;text-decoration:none;font-weight:600;font-size:14px;padding:12px 24px;border-radius:999px;transition:box-shadow .3s" style-hover="box-shadow:0 6px 32px rgba(237,235,227,0.3)">Results</a>
+        <a href="https://github.com/mathi0405/deep_rl_turtlebot_nav" target="_blank" rel="noopener" data-magnetic="true" style="color:var(--ink);text-decoration:none;font-weight:500;font-size:14px;padding:12px 24px;border-radius:999px;background:rgba(232,230,222,0.07);border:1px solid rgba(232,230,222,0.14);transition:background .3s" style-hover="background:rgba(232,230,222,0.14)">GitHub ↗</a>
       </div>
     </article>
   </div>
@@ -229,7 +243,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
         <p style="font-family:'JetBrains Mono',monospace;font-size:14.5px;font-weight:500;color:var(--ink);margin:0;overflow-wrap:anywhere">mathi0405/<span style="color:var(--accent)">Autonomous-driving</span></p>
         <span style="font-size:10.5px;letter-spacing:0.12em;color:var(--muted);border:1px solid rgba(232,230,222,0.14);border-radius:999px;padding:4px 12px;white-space:nowrap">PUBLIC</span>
       </div>
-      <p style="font-size:14.5px;color:var(--muted);line-height:1.65;margin:0">PPO &amp; SAC vs. classical controllers in CARLA. Reproducible training, automated evaluation, CI on every push — lint, typecheck, tests, smoke run, dashboard.</p>
+      <p style="font-size:14.5px;color:var(--muted);line-height:1.65;margin:0">Driving-controller validation: paired CPU-simulation scenarios, failure replay and explicit release gates; PPO/SAC baselines and a separate CARLA adapter. Reproducible training, automated evaluation, CI on every push — lint, typecheck, tests, smoke run, dashboard.</p>
       <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:var(--faint);margin-top:auto">
         <span style="display:flex;align-items:center;gap:7px"><span aria-hidden="true" style="width:9px;height:9px;border-radius:50%;background:#8FA6B8;display:inline-block"></span>Python</span>
         <span>MIT License</span>
@@ -238,7 +252,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
     </a>
     <div data-reveal="true" style="border:1px solid var(--line);border-radius:20px;padding:30px;background:linear-gradient(160deg,#191c17,#161815);display:flex;flex-direction:column;gap:16px">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px 12px">
-        <p style="font-family:'JetBrains Mono',monospace;font-size:14.5px;font-weight:500;color:var(--ink);margin:0;overflow-wrap:anywhere">mathi0405/<span style="color:var(--accent)">Swarm-SAR</span></p>
+        <p style="font-family:'JetBrains Mono',monospace;font-size:14.5px;font-weight:500;color:var(--ink);margin:0;overflow-wrap:anywhere">mathi0405/<span style="color:var(--accent)">drone-swarm-sar</span></p>
         <span style="font-size:10.5px;letter-spacing:0.12em;color:#141613;background:var(--accent);border-radius:999px;padding:4px 12px;font-weight:600;white-space:nowrap">IN DEVELOPMENT</span>
       </div>
       <p style="font-size:14.5px;color:var(--muted);line-height:1.65;margin:0">Public simulation code, raw results, Docker configuration and a Streamlit dashboard. Latest local verification: 102 tests passed; 2 optional export tests skipped without PyTorch.</p>
