@@ -177,7 +177,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
     <h2 style="font-size:clamp(36px,4.8vw,62px);font-weight:500;letter-spacing:-0.03em;margin:0 0 20px;line-height:1.08">One <em style="font-family:'Instrument Serif',serif;font-weight:400">connected</em> system.</h2>
     <p style="font-size:16.5px;color:var(--muted);line-height:1.65;margin:0;text-wrap:pretty">Languages, learning algorithms, perception, simulation, and engineering practice — every node here has shipped in a real project. Hover to trace the connections.</p>
   </div>
-  <div ref="{{ skillsWrapRef }}" data-reveal="true" role="img" aria-label="Interactive graph of skills: Python, C++, MATLAB, Multi-Agent PPO, SAC, CTDE, Gymnasium, PettingZoo, Stable-Baselines3, Ray RLlib, reward shaping, PyTorch, TensorFlow, OpenCV, computer vision, deep learning, PyTorch Geometric, scikit-learn, NumPy, ROS 2, CARLA, AirSim, Gazebo, motion planning, machine vision, Docker, Git, GitHub Actions, Linux, Streamlit, UiPath" style="position:relative;height:clamp(520px,60vw,660px);border:1px solid var(--line);border-radius:24px;background:radial-gradient(ellipse 60% 50% at 50% 45%, rgba(169,188,164,0.06), transparent 70%), #131512;overflow:hidden">
+  <div ref="{{ skillsWrapRef }}" data-reveal="true" role="img" aria-label="Interactive graph of skills: Python, MATLAB, Multi-Agent PPO, SAC, CTDE, Gymnasium, PettingZoo, Stable-Baselines3, Ray RLlib, reward shaping, PyTorch, TensorFlow, OpenCV, computer vision, deep learning, PyTorch Geometric, scikit-learn, NumPy, ROS 2, CARLA, PyBullet, Gazebo, motion planning, machine vision, Docker, Git, GitHub Actions, Linux, Streamlit, pytest" style="position:relative;height:clamp(520px,60vw,660px);border:1px solid var(--line);border-radius:24px;background:radial-gradient(ellipse 60% 50% at 50% 45%, rgba(169,188,164,0.06), transparent 70%), #131512;overflow:hidden">
     <canvas ref="{{ skillsCanvasRef }}" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
     <sc-for list="{{ clusterHubs }}" as="hub" hint-placeholder-count="5">
       <span aria-hidden="true" style="position:absolute;left:{{ hub.x }}%;top:{{ hub.y }}%;transform:translate(-50%,-50%);font-size:10.5px;letter-spacing:0.22em;color:rgba(232,230,222,0.35);pointer-events:none;white-space:nowrap">{{ hub.label }}</span>
@@ -336,11 +336,11 @@ class Component extends DCLogic {
 
   buildGraph() {
     const clusters = [
-      { label: 'LANGUAGES', x: 15, y: 24, nodes: ['Python', 'C++', 'MATLAB'] },
+      { label: 'LANGUAGES', x: 15, y: 24, nodes: ['Python', 'MATLAB'] },
       { label: 'REINFORCEMENT LEARNING', x: 50, y: 26, nodes: ['Multi-Agent PPO', 'SAC', 'CTDE', 'Gymnasium', 'PettingZoo', 'Stable-Baselines3', 'Ray RLlib', 'Reward Shaping'] },
       { label: 'PERCEPTION & ML', x: 84, y: 28, nodes: ['PyTorch', 'TensorFlow', 'OpenCV', 'Computer Vision', 'Deep Learning', 'PyTorch Geometric', 'scikit-learn', 'NumPy'] },
-      { label: 'ROBOTICS & SIMULATION', x: 28, y: 72, nodes: ['ROS 2', 'CARLA', 'AirSim', 'Gazebo', 'Motion Planning', 'Machine Vision'] },
-      { label: 'ENGINEERING', x: 73, y: 74, nodes: ['Docker', 'Git', 'GitHub Actions', 'Linux', 'Streamlit', 'UiPath'] }
+      { label: 'ROBOTICS & SIMULATION', x: 28, y: 72, nodes: ['ROS 2', 'CARLA', 'PyBullet', 'Gazebo', 'Motion Planning', 'Machine Vision'] },
+      { label: 'ENGINEERING', x: 73, y: 74, nodes: ['Docker', 'Git', 'GitHub Actions', 'Linux', 'Streamlit', 'pytest'] }
     ];
     const nodes = [];
     const edges = [];
@@ -362,7 +362,7 @@ class Component extends DCLogic {
       ['Python', 'PyTorch'], ['Python', 'ROS 2'], ['Python', 'TensorFlow'],
       ['PyTorch', 'Multi-Agent PPO'], ['PyTorch Geometric', 'CTDE'],
       ['Stable-Baselines3', 'SAC'], ['CARLA', 'Stable-Baselines3'],
-      ['OpenCV', 'CARLA'], ['ROS 2', 'Docker'], ['AirSim', 'Ray RLlib'],
+      ['OpenCV', 'CARLA'], ['ROS 2', 'Docker'], ['PyBullet', 'OpenCV'],
       ['Machine Vision', 'Computer Vision'], ['GitHub Actions', 'Git']
     ];
     const byLabel = {};
